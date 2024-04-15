@@ -1,0 +1,59 @@
+body{
+    background-color: #d6e4ff;
+}
+
+.stock {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* background-image: url(../assets/StockMarket.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    /* background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+
+.count {
+    /* color: white; */
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.border {
+    border-radius: 34px;
+    background: #d6e4ff;
+    box-shadow:  7px 7px 14px #c1cde6,
+             -7px -7px 14px #ebfbff;
+    margin: 10px 7px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50px;
+}    
+
+/* .text-green-500:hover {
+    color: white;
+    background-color: green;
+    border: none;
+}
+
+.text-red-500:hover {
+    color: white;
+    background-color: red;
+    border: none;
+}
+
+.text-white:hover {
+    color: black;
+    background-color: white;
+    border: none;
+} */
