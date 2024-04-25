@@ -1,0 +1,9 @@
+.cat-btn{
+    background-color: #d51243;
+    padding: 13px 2rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
