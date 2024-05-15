@@ -1,9 +1,9 @@
 import React from 'react'
-import '../Footer/footer.css'
-import logo from '../Assets/logo.png'
-import fapp from '../Assets/fapp.jpg'
-import fgoogle from '../Assets/fgoogle.jpg'
-import fbrandicon from '../Assets/fbrandicon.png'
+import './footer.css'
+import logo from '../../Assets/logo.png'
+import fapp from '../../Assets/fapp.jpg'
+import fgoogle from '../../Assets/fgoogle.jpg'
+import fbrandicon from '../../Assets/fbrandicon.png'
 
 const Footer = () => {
     return (

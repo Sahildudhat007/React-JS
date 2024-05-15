@@ -4,7 +4,7 @@ import PropsCard from './Card'
 
 const Home = (props) => {
   return (
-    <div>
+    <div>  
 
       <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', alignItems: 'center' }}>
 

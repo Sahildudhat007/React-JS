@@ -1,13 +1,21 @@
 import React from 'react'
 import Categories from '../Categories/Categories'
 
-import '../Navbar/navbar.css'
+import { Link } from 'react-router-dom'
+
+import { useNavigate } from 'react-router-dom';
+
+import './navbar.css'
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
   return (
     <div>
-        <div className='main-menu-area mt-5'>
+        <div className='main-menu-area mt-1'>
             <div className='container mx-auto px-5 flex items-center justify-between'>
+                
                 <div className='main-manu flex items-center'>
                     <Categories/>
                     {/* <button className='cat-btn'>
@@ -15,37 +23,47 @@ const Navbar = () => {
                         Categories
                     </button> */}
                     <div className='dropdown1'>
-                        <button className='dropbtn1'>
+                        <ul className='dropbtn1'>
+                            <li><Link to="/">Home <i class="fa-solid fa-angle-down ml-1"></i> </Link></li>
+                        </ul>
+                        {/* <button className='dropbtn1'>
                             Home
                             <i class="fa-solid fa-angle-down ml-1"></i>
-                        </button>
+                        </button> */}
                         <div className='dropdown-content1 ml-4 bg-white'>
                             <ul className='w-[15rem] my-3'>
-                                <li> <a href="#">Wooden Home</a> </li>
-                                <li> <a href="#">Fashion Home</a> </li>
-                                <li> <a href="#">Furniture Home</a> </li>
-                                <li> <a href="#">Cosmetics Home</a> </li>
-                                <li> <a href="#">Food Grocery</a> </li>
+                                <li> <Link to="/">Wooden Home</Link> </li>
+                                <li> <Link to="fashionHome">Fashion Home</Link> </li>
+                                <li> <Link to="furnitureHome">Furniture Home</Link> </li>
+                                <li> <Link to="cosmeticsHome">Cosmetics Home</Link> </li>
+                                <li> <Link to="foodGrocery">Food Grocery</Link> </li>
                             </ul>
                         </div>
                     </div>
                     <div className='dropdown1'>
-                        <button className='dropbtn1'>
+                        <ul className='dropbtn1'>
+                            <li>
+                                <Link to="/shop">Shop
+                                <i class="fa-solid fa-angle-down ml-1"></i>
+                                </Link>
+                            </li>   
+                        </ul>
+                        {/* <button className='dropbtn1'>
                             Shop
                             <i class="fa-solid fa-angle-down ml-1"></i>
-                        </button>
+                        </button> */}
                         <div className='dropdown-content1 ml-4 bg-white'>
                             <ul className='w-[15rem] my-3'>
-                                <li> <a href="#">Shop</a> </li>
-                                <li> <a href="#">Shop 2</a> </li>
-                                <li> <a href="#">Shop Details</a> </li>
-                                <li> <a href="#">Shop Details 2</a> </li>
-                                <li> <a href="#">Shop Location</a> </li>
-                                <li> <a href="#">Cart</a> </li>
-                                <li> <a href="#">Sign In</a> </li>
-                                <li> <a href="#">Checkout</a> </li>
-                                <li> <a href="#">Wishlist</a> </li>
-                                <li> <a href="#">Product Track</a> </li>
+                                <li> <Link to="/shop">Shop</Link> </li>
+                                <li> <Link to="/shop2">Shop 2</Link> </li>
+                                <li> <Link to="/shopDetails/1">Shop Details</Link> </li>
+                                <li> <Link to="/shopDetails2">Shop Details 2</Link> </li>
+                                <li> <Link to="/shopLocation">Shop Location</Link> </li>
+                                <li> <Link to="/cart">Cart</Link> </li>
+                                <li> <Link to="/signIn">Sign In</Link> </li>
+                                <li> <Link to="/checkout">Checkout</Link> </li>
+                                <li> <Link to="/wishlist">Wishlist</Link> </li>
+                                <li> <Link to="/productTrack">Product Track</Link> </li>
                             </ul>
                         </div>
                     </div>
@@ -58,28 +76,28 @@ const Navbar = () => {
                             <div className='flex'>
                                 <ul className='w-[15rem] my-3'>
                                     <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE LAYOUT</h1> </li>
-                                    <li> <a href="#">Shop Filters V1</a> </li>
-                                    <li> <a href="#">Shop Filters V2</a> </li>
-                                    <li> <a href="#">Shop Sidebar</a> </li>
-                                    <li> <a href="#">Shop Right Sidebar</a> </li>
-                                    <li> <a href="#">Shop List View</a> </li>
+                                    <li> <Link to="shopFiltersV1">Shop Filters V1</Link> </li>
+                                    <li> <Link to="shopFiltersV2">Shop Filters V2</Link> </li>
+                                    <li> <Link to="shopSidebar">Shop Sidebar</Link> </li>
+                                    <li> <Link to="shopRightsidebar">Shop Right Sidebar</Link> </li>
+                                    <li> <Link to="shopListview">Shop List View</Link> </li>
                                 </ul>
 
                                 <ul className='w-[15rem] my-3'>
                                     <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE LAYOUT</h1> </li>
-                                    <li> <a href="#">About</a> </li>
-                                    <li> <a href="#">Cart</a> </li>
-                                    <li> <a href="#">Checkout</a> </li>
-                                    <li> <a href="#">Sign In</a> </li>
-                                    <li> <a href="#">Log In</a> </li>
+                                    <li> <Link to="about">About</Link> </li>
+                                    <li> <Link to="cart">Cart</Link> </li>
+                                    <li> <Link to="checkout">Checkout</Link> </li>
+                                    <li> <Link to="/signin">Sign In</Link> </li>
+                                    <li> <Link to="/login">Log In</Link> </li>
                                 </ul>
 
                                 <ul className='w-[15rem] my-3'>
                                     <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE TYPE</h1> </li>
-                                    <li> <a href="#">Product Track</a> </li>
-                                    <li> <a href="#">Wishlist</a> </li>
-                                    <li> <a href="#">404 / Error</a> </li>
-                                    <li> <a href="#">Coming Soon</a> </li>
+                                    <li> <Link to="productTrack">Product Track</Link> </li>
+                                    <li> <Link to="wishlist">Wishlist</Link> </li>
+                                    <li> <Link to="*">404 / Error</Link> </li>
+                                    <li> <Link to="comingSoon">Coming Soon</Link> </li>
                                 </ul>
                             </div>
                         </div>
@@ -91,25 +109,30 @@ const Navbar = () => {
                         </button>
                         <div className='dropdown-content1 ml-4 bg-white'>
                             <ul className='w-[15rem] my-3'>
-                                <li> <a href="#">Blog</a> </li>
-                                <li> <a href="#">Blog Details</a> </li>
+                                <li> <Link to="blog">Blog</Link> </li>
+                                <li> <Link to="blogDetails">Blog Details</Link> </li>
                             </ul>
                         </div>
                     </div>
-                    <div className='dropdown1'>
+                    <ul className='dropbtn1'>
+                            <li>
+                                <Link to="/contact">Contact</Link>
+                            </li>   
+                        </ul>
+                    {/* <div className='dropdown1'>
                         <button className='dropbtn1'>Contact</button>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='menu-contact'>
                     <ul className='flex items-center'>
                         <li className='mr-5'>
-                            <a href="#" className='hover:text-red-500'>
+                            <a href="mobile" className='hover:text-red-500'>
                             <i class="fa-solid fa-phone-flip mr-2 text-red-600"></i>
                             908. 408. 501. 89
                             </a>
                         </li>
                         <li>
-                            <a href="#" className='hover:text-red-500'>
+                            <a href="find_store" className='hover:text-red-500'>
                             <i class="fa-solid fa-location-dot mr-2 text-red-600"></i>
                             Find Store
                             </a>
@@ -118,119 +141,6 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        {/* <div className='main-menu-area mt-5'>
-            <div className='container mx-auto px-5'>
-                <div className='row flex items-center justify-between'>
-                <div className=''>
-                    <div className=' items-center ml-1'>
-                        <div className='main-manu'>
-                            <div className='dropdown1'>
-                                <button className='dropbtn1'>
-                                    Home
-                                    <i class="fa-solid fa-angle-down ml-1"></i>
-                                </button>
-                                <div className='dropdown-content1 ml-5 bg-white'>
-                                    <ul className='w-[15rem] my-3'>
-                                    <li> <a href="#">Wooden Home</a> </li>
-                                    <li> <a href="#">Fashion Home</a> </li>
-                                    <li> <a href="#">Furniture Home</a> </li>
-                                    <li> <a href="#">Cosmetics Home</a> </li>
-                                    <li> <a href="#">Food Grocery</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className='dropdown1'>
-                                <button className='dropbtn1'>
-                                    Shop
-                                    <i class="fa-solid fa-angle-down ml-1"></i>
-                                </button>
-                                <div className='dropdown-content1 ml-5 bg-white'>
-                                    <ul className='w-[15rem] my-3'>
-                                    <li> <a href="#">Shop</a> </li>
-                                    <li> <a href="#">Shop 2</a> </li>
-                                    <li> <a href="#">Shop Details</a> </li>
-                                    <li> <a href="#">Shop Details 2</a> </li>
-                                    <li> <a href="#">Shop Location</a> </li>
-                                    <li> <a href="#">Cart</a> </li>
-                                    <li> <a href="#">Sign In</a> </li>
-                                    <li> <a href="#">Checkout</a> </li>
-                                    <li> <a href="#">Wishlist</a> </li>
-                                    <li> <a href="#">Product Track</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className='dropdown1'>
-                                <button className='dropbtn1'>
-                                    Pages
-                                    <i class="fa-solid fa-angle-down ml-1"></i>
-                                </button>
-                                <div className='dropdown-content1 ml-5 bg-white'>
-                                    <div className='flex'>
-                                        <ul className='w-[15rem] my-3'>
-                                            <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE LAYOUT</h1> </li>
-                                            <li> <a href="#">Shop Filters V1</a> </li>
-                                            <li> <a href="#">Shop Filters V2</a> </li>
-                                            <li> <a href="#">Shop Sidebar</a> </li>
-                                            <li> <a href="#">Shop Right Sidebar</a> </li>
-                                            <li> <a href="#">Shop List View</a> </li>
-                                        </ul>
-
-                                        <ul className='w-[15rem] my-3'>
-                                            <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE LAYOUT</h1> </li>
-                                            <li> <a href="#">About</a> </li>
-                                            <li> <a href="#">Cart</a> </li>
-                                            <li> <a href="#">Checkout</a> </li>
-                                            <li> <a href="#">Sign In</a> </li>
-                                            <li> <a href="#">Log In</a> </li>
-                                        </ul>
-
-                                        <ul className='w-[15rem] my-3'>
-                                            <li className='ml-4 mb-3 text-sm font-bold'> <h1 className='hover:text-red-500'>PAGE TYPE</h1> </li>
-                                            <li> <a href="#">Product Track</a> </li>
-                                            <li> <a href="#">Wishlist</a> </li>
-                                            <li> <a href="#">404 / Error</a> </li>
-                                            <li> <a href="#">Coming Soon</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='dropdown1'>
-                                <button className='dropbtn1'>
-                                    Blog
-                                    <i class="fa-solid fa-angle-down ml-1"></i>
-                                </button>
-                                <div className='dropdown-content1 ml-5 bg-white'>
-                                    <ul className='w-[15rem] my-3'>
-                                        <li> <a href="#">Blog</a> </li>
-                                        <li> <a href="#">Blog Details</a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className='dropdown1'>
-                                <button className='dropbtn1'>Contact</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='menu-contact '>
-                    <ul className='flex items-center'>
-                        <li className='mr-5'>
-                            <a href="#" className='hover:text-red-500'>
-                            <i class="fa-solid fa-phone-flip mr-2 text-red-600"></i>
-                            908. 408. 501. 89
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className='hover:text-red-500'>
-                            <i class="fa-solid fa-location-dot mr-2 text-red-600"></i>
-                            Find Store
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-          </div>
-        </div> */}
     </div>
   )
 }
