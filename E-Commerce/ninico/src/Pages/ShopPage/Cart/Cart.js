@@ -2,8 +2,11 @@ import React, { useState, useRef } from 'react'
 
 import PageHeading from '../../../Component/PageHeading/PageHeading'
 
-import { REMOVE_CART, INCREMENT_CART } from '../../../Redux/Actions/Action';
+import { REMOVE_CART, INCREMENT_CART, DECREMENT_CART } from '../../../Redux/Actions/Action';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Cart = () => {
 
@@ -14,9 +17,14 @@ const Cart = () => {
         dispatch(REMOVE_CART(id))
     }
 
-    const showCount = (item) => {
-        // console.log(item);
+    const Inc_Cart = (item) => {
+        console.log(item);
         dispatch(INCREMENT_CART(item))
+    }
+
+    const Dec_Cart = (item) => {
+        console.log(item);
+        dispatch(DECREMENT_CART(item))
     }
 
     const CartlistItem = useSelector((state) => state.cartreducer.carts)
@@ -44,26 +52,37 @@ const Cart = () => {
                                         </thead>
                                         <tbody className="divide-y divide-gray-200 bg-white text-center">
                                             {CartlistItem.map((item, ind) => {
-                                                let { id, firstProductImg, productName, Price, quantity } = item
+                                                let { id, img, title, rate, quantity } = item
                                                 return (
                                                     <tr key={ind}>
                                                         <td className="whitespace-nowrap">
                                                             <a href="#" className='flex justify-center'>
-                                                                <img src={firstProductImg} alt="" className='product-img w-[125px] h-[143px]' />
+                                                                <img src={img} alt="" className='product-img w-[125px] h-[143px]' />
                                                             </a>
                                                         </td>
                                                         <td className="whitespace-nowrap">
-                                                            <div className="product-name">{productName}</div>
+                                                            <div className="product-name">{title}</div>
                                                         </td>
-                                                        <td className="whitespace-nowrap">${Price}.00</td>
+                                                        <td className="whitespace-nowrap">${rate}.00</td>
                                                         <td className="whitespace-nowrap">
-                                                            {quantity}
-                                                            <button onClick={()=>showCount(item)} className='border p-2 text-start'>
-                                                                +
-                                                            </button>
-                                                            {/* <input type="number" min={1} defaultValue={1} name='qty' className='qty' /> */}
+                                                            <div className='input flex items-center justify-between border px-2'>
+                                                                <div className='input-text'>
+                                                                    <p>{quantity}</p>
+                                                                </div>
+                                                                <div className='input-btn flex flex-col'>
+                                                                    <button onClick={() => Inc_Cart(item)}><IoMdArrowDropup /></button>
+                                                                    <button onClick={() => Dec_Cart(item)}><IoMdArrowDropdown /></button>
+                                                                </div>
+                                                            </div>
+                                                            {/* <p>{quantity}</p>
+                                                            <div className=''>
+                                                                <button onClick={() => showCount(item)} className=''><IoMdArrowDropup /></button>
+                                                                <button className=''><IoMdArrowDropdown /></button>
+                                                            </div> */}
+
+                                                            {/* <input type="number" min={1} defaultValue={1} name='qty' className='qty outline-0' /> */}
                                                         </td>
-                                                        <td className="whitespace-nowrap">${Price * quantity}.00</td>
+                                                        <td className="whitespace-nowrap">${rate * quantity}.00</td>
                                                         <td className="whitespace-nowrap">
                                                             <button onClick={() => Remove_Cart(id)}>Remove</button>
                                                         </td>

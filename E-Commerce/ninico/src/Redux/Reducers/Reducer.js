@@ -1,54 +1,108 @@
 const initial_state = {
-    carts : [],
-    Wishlist : []
+    carts: [],
+    Wishlist: []
 }
 
 export const cartreducer = (state = initial_state, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
-            return{
+            return {
                 ...state,
-                carts : [...state.carts, action.payload]
+                carts: [...state.carts, action.payload]
             }
         case "REMOVE_TO_CART":
-            state.carts = state.carts.filter((item)=>item.id !== action.payload);
-            console.log("filter ",state.carts)
-            return{
+            state.carts = state.carts.filter((item) => item.id !== action.payload);
+            console.log("filter ", state.carts)
+            return {
                 ...state,
-                carts : [...state.carts]
+                carts: [...state.carts]
             }
 
-        case "INCREMENT_TO_CART":{
-            let inc_cart = state.carts.map((item)=>{
-                if(item.id == action.payload.id){
-                    return{
+        case "INCREMENT_TO_CART": {
+            let inc_cart = state.carts.map((item) => {
+                if (item.id == action.payload.id) {
+                    return {
                         ...item,
-                        quantity : item.quantity + 1
+                        quantity: item.quantity + 1
                     }
                 }
-                return item
+                return item;
             })
-            return{
+            return {
                 ...state,
                 carts: inc_cart
             }
         }
 
-        case "ADD_TO_WISHLIST":
-            return{
+        case "DECREMENT_TO_CART": {
+            let dec_cart = state.carts;
+            if (action.payload.quantity !== 1) {
+                dec_cart = state.carts.map(item => {
+                    if (item.id == action.payload.id) {
+                        return {
+                            ...item,
+                            quantity: item.quantity - 1
+                        };
+                    }
+                    return item;
+                });
+            }
+            return {
                 ...state,
-                Wishlist : [...state.Wishlist, action.payload]
+                carts: dec_cart
+            }
+        }
+
+        case "ADD_TO_WISHLIST":
+            return {
+                ...state,
+                Wishlist: [...state.Wishlist, action.payload]
             }
 
         case "REMOVE_TO_WISHLIST":
-            state.Wishlist = state.Wishlist.filter((item)=>item.id !== action.payload);
-            console.log("filter ",state.Wishlist)
-            return{
+            state.Wishlist = state.Wishlist.filter((item) => item.id !== action.payload);
+            console.log("filter ", state.Wishlist)
+            return {
                 ...state,
-                Wishlist : [...state.Wishlist]
+                Wishlist: [...state.Wishlist]
             }
 
+        case "INCREMENT_TO_WISHLIST": {
+            let inc_wistlist = state.Wishlist.map((item) => {
+                if (item.id == action.payload.id) {
+                    return {
+                        ...item,
+                        quantity: item.quantity + 1
+                    }
+                }
+                return item;
+            })
+            return {
+                ...state,
+                Wishlist: inc_wistlist
+            }
+        }
+
+        case "DECREMENT_TO_WISHLIST": {
+            let dec_wish = state.Wishlist;
+            if (action.payload.quantity !== 1) {
+                dec_wish = state.Wishlist.map(item => {
+                    if (item.id == action.payload.id) {
+                        return {
+                            ...item,
+                            quantity: item.quantity - 1
+                        };
+                    }
+                    return item;
+                });
+            }
+            return {
+                ...state,
+                Wishlist: dec_wish
+            }
+        }
+
         default:
-            return state
+            return state;
     }
 }

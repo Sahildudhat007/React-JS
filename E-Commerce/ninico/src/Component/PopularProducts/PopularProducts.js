@@ -40,7 +40,7 @@ const PopularProducts = () => {
                         <div className='card-group grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center mt-7 mb-3'>
                             {PopularData.map((cvalue, index, array) => {
                                 return (
-                                    <Commoncard key={index} id={cvalue.id} firstProductImg={cvalue.img} secondeProductImg={cvalue.img2} productName={cvalue.title} Price={cvalue.rate} quantity={cvalue.quantity} />
+                                    <Commoncard key={index} id={cvalue.id} img={cvalue.img} img2={cvalue.img2} title={cvalue.title} rate={cvalue.rate} quantity={cvalue.quantity} />
                                 )
                             })}
                         </div>
@@ -51,7 +51,7 @@ const PopularProducts = () => {
                                 )
                             })}
                         </div> */}
-                        <ToastContainer/>
+                        <ToastContainer position='bottom-right' theme='colored' autoClose='1000' />
                     </div>
                 </div>
             </section>

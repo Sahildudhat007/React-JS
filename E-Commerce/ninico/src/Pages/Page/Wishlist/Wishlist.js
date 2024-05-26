@@ -3,7 +3,10 @@ import { useState } from 'react';
 
 import './wishlist.css'
 
-import { REMOVE_WISHLIST } from '../../../Redux/Actions/Action';
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
+
+import { REMOVE_WISHLIST, INCREMENT_WISHLIST, DECREMENT_WISHLIST } from '../../../Redux/Actions/Action';
 import { useDispatch, useSelector } from 'react-redux';
 
 import PageHeading from '../../../Component/PageHeading/PageHeading';
@@ -17,7 +20,18 @@ const Wishlist = () => {
         dispatch(REMOVE_WISHLIST(id))
     }
 
+    const Inc_Wish = (item) => {
+        console.log(item);
+        dispatch(INCREMENT_WISHLIST(item))
+    }
+
+    const Dec_Wish = (item) => {
+        console.log(item);
+        dispatch(DECREMENT_WISHLIST(item))
+    }
+
     const wishlistItem = useSelector((state) => state.cartreducer.Wishlist)
+    // const [wishlistCounter, setwishlistCounter] = useState(null)
     console.log(wishlistItem)
 
     return (
@@ -43,22 +57,31 @@ const Wishlist = () => {
                                         </thead>
                                         <tbody className="divide-y divide-gray-200 bg-white text-center">
                                             {wishlistItem.map((item, ind) => {
-                                                let { id, firstProductImg, productName, Price } = item
+                                                let { id, img, title, rate, quantity } = item
                                                 return (
                                                     <tr key={ind}>
                                                         <td className="whitespace-nowrap">
                                                             <a href="#" className='flex justify-center'>
-                                                                <img src={firstProductImg} alt="" className='product-img w-[125px] h-[143px]' />
+                                                                <img src={img} alt="" className='product-img w-[125px] h-[143px]' />
                                                             </a>
                                                         </td>
                                                         <td className="whitespace-nowrap">
-                                                            <div className="product-name">{productName}</div>
+                                                            <div className="product-name">{title}</div>
                                                         </td>
-                                                        <td className="whitespace-nowrap">{Price}</td>
+                                                        <td className="whitespace-nowrap">{rate}</td>
                                                         <td className="whitespace-nowrap">
-                                                            <input type="number" min={1} defaultValue={1} name='qty' className='qty' />
+                                                            <div className='input flex items-center justify-between border px-2'>
+                                                                <div className='input-text'>
+                                                                    <p>{quantity}</p>
+                                                                </div>
+                                                                <div className='input-btn flex flex-col'>
+                                                                    <button onClick={() => Inc_Wish(item)}><IoMdArrowDropup /></button>
+                                                                    <button onClick={() => Dec_Wish(item)}><IoMdArrowDropdown /></button>
+                                                                </div>
+                                                            </div>
+                                                            {/* <input type="number" min={1} defaultValue={1} name='qty' className='qty' /> */}
                                                         </td>
-                                                        <td className="whitespace-nowrap">{Price}</td>
+                                                        <td className="whitespace-nowrap">{rate * quantity}</td>
                                                         <td>
                                                             <button className='tp-btn'>Add To Cart</button>
                                                         </td>

@@ -4,6 +4,11 @@ import PageHeading from '../../../Component/PageHeading/PageHeading'
 
 import './shopDetails.css'
 
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { ADD_CART } from "../../../Redux/Actions/Action";
+
 import productdet1 from '../../../Assets/productdet1.png'
 import productdet2 from '../../../Assets/productdet2.png'
 import productdet3 from '../../../Assets/productdet3.png'
@@ -17,6 +22,16 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { useParams } from 'react-router-dom'
 
 const ShopDetails = () => {
+
+    const data = useSelector((state) => state.cartreducer.carts)
+    const dispatch = useDispatch();
+    const send = (e) => {
+        console.log(e, "eeee")
+        dispatch(ADD_CART(e))
+        let find = data.findIndex(item => item.id === e.id);
+        find === -1 ? toast.success("This is item  added to cart") : toast.error("This item is alredy in the Cart");
+    }
+
     const [productCount, setProductCount] = useState(1);
     if (productCount <= 0) {
         setProductCount(1)
@@ -28,8 +43,9 @@ const ShopDetails = () => {
         return (PopularData.id === Number(Id.id))
     })
 
-    const { id, img, img2, title, rate } = productInfo[0]
+    // const { id, img, img2, title, rate } = productInfo[0]
 
+    const { id, img, title, rate, quantity } = productInfo[0]
 
     return (
         <div>
@@ -79,7 +95,7 @@ const ShopDetails = () => {
                                     <input type="number" min={1} defaultValue={1} className='border font-bold rounded-md w-56 h-14 p-3' />
                                 </div>
                                 <div className='product-details-cart mr-3'>
-                                    <button className='flex justify-center items-center bg-rose-600 text-white rounded-md w-[11rem] h-14 font-bold'> <IoCartOutline className='mr-1 text-lg' /> Add To Cart</button>
+                                    <button onClick={() => send(productInfo[0])} className='flex justify-center items-center bg-rose-600 text-white rounded-md w-[11rem] h-14 font-bold'> <IoCartOutline className='mr-1 text-lg' /> Add To Cart</button>
                                 </div>
                                 {/* <div className='product-details-wishlist'>
                                     <button className='border p-4 rounded-md text-gray-300'><IoMdHeartEmpty className='text-2xl' /></button>

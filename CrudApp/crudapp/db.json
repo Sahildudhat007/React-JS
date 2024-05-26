@@ -1,0 +1,28 @@
+{
+  "people": [
+    {
+      "id": "0d08",
+      "Firstname": "Sahil",
+      "Lastname": "Dudhat",
+      "Gender": "male",
+      "Age": "22",
+      "City": "Surat, Gujarat"
+    },
+    {
+      "id": "dc31",
+      "Firstname": "Piyush",
+      "Lastname": "Suhagiya",
+      "Gender": "male",
+      "Age": "27",
+      "City": "Surat, Gujarat"
+    },
+    {
+      "id": "0715",
+      "Firstname": "Jayan",
+      "Lastname": "Dudakiya",
+      "Gender": "male",
+      "Age": "23",
+      "City": "Surat, Gujarat"
+    }
+  ]
+}

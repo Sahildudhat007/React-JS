@@ -13,53 +13,45 @@ import { CiHeart } from "react-icons/ci";
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ADD_CART, ADD_WISHLIST } from "../../Redux/Actions/Action";
 
 import './PopularProducts.css'
 
-function Commoncard({ id, firstProductImg, secondeProductImg, productName, Price, quantity }) {
-
-    const notify = () => {
-        toast.success('This item added to cart', {
-            position: "bottom-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Bounce,
-        });
-        // alert("hello")
-    }
+function Commoncard({ id, img, img2, title, rate, quantity }) {
 
     const navigate = useNavigate();
 
-    const Product = { firstProductImg, secondeProductImg, productName, Price, id, quantity }
+    const data = useSelector((state) => state.cartreducer.carts)
+    const data2 = useSelector((state) => state.cartreducer.Wishlist)
+
+    const Product = { img, img2, title, rate, id, quantity }
     const dispatch = useDispatch();
     const send = (e) => {
         console.log(e, "eeee")
         dispatch(ADD_CART(e))
+        let find = data.findIndex(item => item.id === e.id); 
+        find === -1 ?  toast.success("This is item  added to cart"):  toast.error("This item is alredy in the Cart");
     }
 
     const SendWishlist = (e) => {
         console.log(e, "eeee")
         dispatch(ADD_WISHLIST(e))
+        let find = data2.findIndex(item => item.id === e.id); 
+        find === -1 ?  toast.success("This item is added to Wishlist"):  toast.error("This item is alredy in the Wishlist");
     }
 
     return (
         <div id='PRODUCTCARD' className='ProductCard w-[19rem] h-[26rem]'>
             <div className='ProductCard-Head mx-3.5 my-3 relative'>
                 <Link id='ProductCard-link' to={`/shopDetails/${id}`} className='block rounded-md overflow-hidden relative '>
-                    <img src={firstProductImg} alt={productName + "image"} className='black object-contain w-full h-full mx-auto ' />
-                    <img src={secondeProductImg} alt={productName + "image"} className='black object-contain mx-auto absolute top-0 z-[1]' />
+                    <img src={img} alt={title + "image"} className='black object-contain w-full h-full mx-auto ' />
+                    <img src={img2} alt={title + "image"} className='black object-contain mx-auto absolute top-0 z-[1]' />
                 </Link>
                 <div className='ProductCard-Buttons mx-auto flex items-stretch justify-center rounded-md absolute '>
                     <ul className='bg-white w-full flex items-center justify-evenly rounded-md'>
                         <li className='flex items-center justify-center'>
-                            <button onClick={notify} className='flex items-center justify-center hover:text-[#D51243] transition-all'>
+                            <button className='flex items-center justify-center hover:text-[#D51243] transition-all'>
                                 <CiShoppingBasket onClick={() => send(Product)} className='text-2xl' />
                             </button>
                         </li>
@@ -74,16 +66,16 @@ function Commoncard({ id, firstProductImg, secondeProductImg, productName, Price
                             </button>
                         </li>
                         <li className='flex items-center justify-center'>
-                            <button onClick={() => SendWishlist(Product)} className='flex items-center justify-center hover:text-[#D51243] transition-all'>
-                                <CiHeart className='text-2xl' />
+                            <button className='flex items-center justify-center hover:text-[#D51243] transition-all'>
+                                <CiHeart onClick={() => SendWishlist(Product)} className='text-2xl' />
                             </button>
                         </li>
                     </ul>
                 </div>
             </div>
             <div className='ProductCard-body mx-3.5'>
-                <Link to={`/shopDetails/${id}`} className='text-[1rem] capitalize block text-gray-400 ' >{productName}</Link>
-                <p className='text-[1.1rem] font-bold mt-1'>${Price}.00</p>
+                <Link to={`/shopDetails/${id}`} className='text-[1rem] capitalize block text-gray-400 ' >{title}</Link>
+                <p className='text-[1.1rem] font-bold mt-1'>${rate}.00</p>
             </div>
             <div className='ProductCard-Review flex items-center justify-between mt-1 px-3.5'>
                 <ul className='ProductCard-Colors'>

@@ -30,11 +30,11 @@ const Home = () => {
               spaceBetween={30}
               centeredSlides={true}
               autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
+                delay: 2500,
+                disableOnInteraction: false,
               }}
               pagination={{
-              clickable: true,
+                clickable: true,
               }}
               modules={[Autoplay, Pagination]}
               className="mySwiper"
@@ -52,24 +52,24 @@ const Home = () => {
 
               <SwiperSlide>
                 <div className='swiper-container'>
-                    <img src={banner2} alt="banner_img" className='rounded-md' />
-                    <div className='swiper-text'>
-                      <h3>Accessories</h3>
-                      <h1>Up To <span>35% off</span> Latest Creations</h1>
-                      <button className='bg-white px-7 py-3 mt-3 font-semibold rounded-md'>Shop Now <i class="fa-solid fa-arrow-right ml-2"></i> </button>
-                    </div>
+                  <img src={banner2} alt="banner_img" className='rounded-md' />
+                  <div className='swiper-text'>
+                    <h3>Accessories</h3>
+                    <h1>Up To <span>35% off</span> Latest Creations</h1>
+                    <button className='bg-white px-7 py-3 mt-3 font-semibold rounded-md'>Shop Now <i class="fa-solid fa-arrow-right ml-2"></i> </button>
                   </div>
+                </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className='swiper-container'>
-                    <img src={banner3} alt="banner_img" className='rounded-md' />
-                    <div className='swiper-text'>
-                      <h3>Accessories</h3>
-                      <h1>Up To <span>45% off</span> Latest Creations</h1>
-                      <button className='bg-white px-7 py-3 mt-3 font-semibold rounded-md'>Shop Now <i class="fa-solid fa-arrow-right ml-2"></i> </button>
-                    </div>
+                  <img src={banner3} alt="banner_img" className='rounded-md' />
+                  <div className='swiper-text'>
+                    <h3>Accessories</h3>
+                    <h1>Up To <span>45% off</span> Latest Creations</h1>
+                    <button className='bg-white px-7 py-3 mt-3 font-semibold rounded-md'>Shop Now <i class="fa-solid fa-arrow-right ml-2"></i> </button>
                   </div>
+                </div>
               </SwiperSlide>
             </Swiper>
 
@@ -90,7 +90,7 @@ const Home = () => {
               </div>
             </div>
 
-          </div>          
+          </div>
         </section>
       </main>
 
