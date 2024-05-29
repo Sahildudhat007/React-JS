@@ -1,11 +1,13 @@
 const initial_state = {
     carts: [],
-    Wishlist: []
+    Wishlist: [],
+    quantities: []
 }
 
 export const cartreducer = (state = initial_state, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
+            state.carts = state.carts.filter((item) => item.id !== action.payload.id)
             return {
                 ...state,
                 carts: [...state.carts, action.payload]
@@ -53,7 +55,17 @@ export const cartreducer = (state = initial_state, action) => {
             }
         }
 
+        case "UPDATE_QUANTITY":
+            return {
+                ...state,
+                quantities: {
+                    ...state.quantities,
+                    [action.payload.id]: action.payload.quantity
+                }
+            }
+
         case "ADD_TO_WISHLIST":
+            state.Wishlist = state.Wishlist.filter((item) => item.id !== action.payload.id)
             return {
                 ...state,
                 Wishlist: [...state.Wishlist, action.payload]

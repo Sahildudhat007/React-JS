@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 
 import PageHeading from '../../../Component/PageHeading/PageHeading'
 
-import { REMOVE_CART, INCREMENT_CART, DECREMENT_CART } from '../../../Redux/Actions/Action';
+import { REMOVE_CART, INCREMENT_CART, DECREMENT_CART, UPDATE_QUANTITY } from '../../../Redux/Actions/Action';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { IoMdArrowDropup } from "react-icons/io";
@@ -27,8 +27,22 @@ const Cart = () => {
         dispatch(DECREMENT_CART(item))
     }
 
-    const CartlistItem = useSelector((state) => state.cartreducer.carts)
+    const CartlistItem = useSelector((state) => state.cartreducer.carts);
+    const quantities = useSelector((state) => state.cartreducer.Quantities);
     console.log(CartlistItem);
+
+    const changeQuantity = (event, id) => {
+        const Quantity = parseInt(event.target.value);
+        dispatch(UPDATE_QUANTITY(id, Quantity));
+    };
+
+    let Subtotal = 0;
+    CartlistItem.forEach((item) => {
+        const Quantity = quantities[item.id] || 1;
+        Subtotal += item.rate * Quantity;
+    });
+
+    const Taxes = 9.00;
 
     return (
         <div>
@@ -52,7 +66,9 @@ const Cart = () => {
                                         </thead>
                                         <tbody className="divide-y divide-gray-200 bg-white text-center">
                                             {CartlistItem.map((item, ind) => {
-                                                let { id, img, title, rate, quantity } = item
+                                                let { id, img, title, rate } = item
+                                                const quantity = quantities[id] || 1;
+                                                const totalPrice = quantity * rate
                                                 return (
                                                     <tr key={ind}>
                                                         <td className="whitespace-nowrap">
@@ -74,15 +90,9 @@ const Cart = () => {
                                                                     <button onClick={() => Dec_Cart(item)}><IoMdArrowDropdown /></button>
                                                                 </div>
                                                             </div>
-                                                            {/* <p>{quantity}</p>
-                                                            <div className=''>
-                                                                <button onClick={() => showCount(item)} className=''><IoMdArrowDropup /></button>
-                                                                <button className=''><IoMdArrowDropdown /></button>
-                                                            </div> */}
-
-                                                            {/* <input type="number" min={1} defaultValue={1} name='qty' className='qty outline-0' /> */}
                                                         </td>
-                                                        <td className="whitespace-nowrap">${rate * quantity}.00</td>
+                                                        {/* <td className="whitespace-nowrap">${rate * quantity}.00</td> */}
+                                                        <td className="whitespace-nowrap">${totalPrice.toFixed(2)}</td>
                                                         <td className="whitespace-nowrap">
                                                             <button onClick={() => Remove_Cart(id)}>Remove</button>
                                                         </td>
@@ -96,51 +106,6 @@ const Cart = () => {
                         </div>
                     </div>
                 </section>
-                {/* <div className='table w-[100%] px-5 mt-16 mb-10'>
-                    <div className='table-content w-[100%]'>
-                        <table className='table-auto w-full'>
-                            <thead>
-                                <tr>
-                                    <th>Images</th>
-                                    <th>Courses</th>
-                                    <th>Unit Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th>Add To Cart</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody className='text-center'>
-                                {CartlistItem.map((item, ind) => {
-                                    let { id ,firstProductImg, productName, Price} = item
-                                    return (
-                                        <tr key={ind} className='cart-item'>
-                                            <td className=''>
-                                                <a href="#" className='flex justify-center'>
-                                                    <img src={firstProductImg} alt="" className='' />
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" className='product-name'>{productName}</a>
-                                            </td>
-                                            <td>{Price}</td>
-                                            <td className=''>
-                                                <input type="number" min={1} defaultValue={1} name='qty' className='qty' />
-                                            </td>
-                                            <td>{Price}</td>
-                                            <td>
-                                                <button className='tp-btn'>Add To Cart</button>
-                                            </td>
-                                            <td>
-                                                <button onClick={() => Remove_Cart(id)}>Remove</button>
-                                            </td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table>
-                    </div>
-                </div> */}
                 <div className='btn-group px-5 mb-10'>
                     <div className='coupon1 flex justify-between flex-wrap'>
                         <div className='coupon'>
@@ -152,18 +117,24 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-2 px-5 mb-16'>
-                    <div></div>
-                    <div className='cart-page-total'>
+                <div className='flex justify-end px-5 mb-16 w-full'>
+                    <div className='cart-page-total w-[50%]'>
                         <h2 className='text-2xl font-semibold mb-4'>Cart Totals</h2>
                         <ul className='mb-7'>
                             <li className='border flex items-center justify-between px-5 h-12'>
                                 <p>Subtotal</p>
-                                <p>$20.00</p>
+                                <p>${Subtotal.toFixed(2)}</p>
+                                {/* <p>$20.00</p> */}
+                            </li>
+                            <li className='border flex items-center justify-between px-5 h-12'>
+                                <p>Taxes</p>
+                                <p>${(Subtotal * Taxes / 100).toFixed(2)}</p>
+                                {/* <p>$20.00</p> */}
                             </li>
                             <li className='border flex items-center justify-between px-5 h-12'>
                                 <p>Total</p>
-                                <p>$20.00</p>
+                                <p>${(Subtotal + (Subtotal * Taxes / 100)).toFixed(2)}</p>
+                                {/* <p>$20.00</p> */}
                             </li>
                         </ul>
                         <button className='bg-rose-600 p-3 text-white font-semibold rounded-md'>Proceed to Checkout</button>

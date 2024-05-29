@@ -3,28 +3,31 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+
 const Home = () => {
 
     const [people, setPeople] = useState([]);
 
-    const peopleData = async() => {
+    const peopleData = async () => {
         const res = await axios.get("http://localhost:3001/people")
         console.log(res, "res");
         setPeople(res.data)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         peopleData();
-    },[])
+    }, [])
 
     const deleteData = (id) => {
         axios.delete(`http://localhost:3001/people/${id}`)
-        .then((response) => {
-            peopleData()
-        })
-        .catch((error)=>{
-            console.log(error, "error")
-        })
+            .then((response) => {
+                peopleData()
+            })
+            .catch((error) => {
+                console.log(error, "error")
+            })
     }
 
     return (
@@ -39,16 +42,18 @@ const Home = () => {
                         </p>
                     </div>
                     <div>
-                        <button
-                            type="button"
-                            className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                        >
-                            <Link to="/create">Add new Student</Link>
-                        </button>
+                        <Link to="/create">
+                            <button
+                                type="button"
+                                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                Add new Student
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="mt-6 flex flex-col">
-                    <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-4">
                         <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                             <div className="overflow-hidden border border-gray-200 md:rounded-lg">
                                 <table className="min-w-full divide-y divide-gray-200">
@@ -95,7 +100,7 @@ const Home = () => {
                                         {people.map((person) => (
                                             <tr key={person.id}>
                                                 <td className="whitespace-nowrap px-4 py-4">
-                                                    <div className="flex items-center">
+                                                    <div className="flex">
                                                         <div className="ml-4">
                                                             <div className="text-md font-medium text-gray-900">{person.Firstname}</div>
                                                             <div className="text-md text-gray-700">{person.Email}</div>
@@ -117,18 +122,13 @@ const Home = () => {
                                                     {person.City}
                                                 </td>
                                                 <td className="whitespace-nowrap px-4 py-4 text-right text-md font-medium">
-                                                    <Link  to="/edit" className="text-gray-700">
-                                                        Edit /
+                                                    <Link to={`/edit/${person.id}`}>
+                                                        <button className='text-2xl text-gray-600'> <FaEdit /> </button>
                                                     </Link>
-                                                    <a onClick={()=>deleteData(person.id)} href="#" className="text-gray-700 pl-1">
-                                                        Delete
-                                                    </a>
+                                                    <Link onClick={() => deleteData(person.id)} href="#">
+                                                        <button className='text-2xl mx-2 text-gray-600'> <MdDelete /> </button>
+                                                    </Link>
                                                 </td>
-                                                {/* <td className="whitespace-nowrap px-4 py-4 text-right text-md font-medium">
-                                                    <a href="#" className="text-gray-700 pl-1">
-                                                        Delete
-                                                    </a>
-                                                </td> */}
                                             </tr>
                                         ))}
                                     </tbody>

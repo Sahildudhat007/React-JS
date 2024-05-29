@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 const Edit = () => {
 
     const navigate = useNavigate();
+    const { id } = useParams();
     const [student, setStudent] = useState({
         Firstname: "",
         Lastname: "",
@@ -14,11 +15,20 @@ const Edit = () => {
         City: ""
     })
 
-    const onSubmitStudent = (e) => {
+    const editData = async (e) => {
+        const res = await axios.get(`http://localhost:3001/people/${id}`)
+        setStudent(res.data)
+    }
+
+    const onSubmitStudent = async (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/people", student)
+        await axios.put(`http://localhost:3001/people/${id}`, student)
         navigate("/")
     }
+
+    useEffect(() => {
+        editData();
+    }, [])
 
     return (
         <div>
@@ -66,6 +76,7 @@ const Edit = () => {
                                             placeholder="Firstname"
                                             id="name"
                                             name='Firstname'
+                                            value={student.Firstname}
                                             onChange={(e) => setStudent({ ...student, Firstname: e.target.value })}
                                         ></input>
                                     </div>
@@ -82,6 +93,7 @@ const Edit = () => {
                                             placeholder="Lastname"
                                             id="lastname"
                                             name='lastname'
+                                            value={student.Lastname}
                                             onChange={(e) => setStudent({ ...student, Lastname: e.target.value })}
                                         ></input>
                                     </div>
@@ -98,6 +110,7 @@ const Edit = () => {
                                             placeholder="Gender"
                                             id="Gender"
                                             name='Gender'
+                                            value={student.Gender}
                                             onChange={(e) => setStudent({ ...student, Gender: e.target.value })}
                                         ></input>
                                     </div>
@@ -116,6 +129,7 @@ const Edit = () => {
                                             placeholder="Age"
                                             id="age"
                                             name='age'
+                                            value={student.Age}
                                             onChange={(e) => setStudent({ ...student, Age: e.target.value })}
                                         ></input>
                                     </div>
@@ -134,6 +148,7 @@ const Edit = () => {
                                             placeholder="City"
                                             id="city"
                                             name='city'
+                                            value={student.City}
                                             onChange={(e) => setStudent({ ...student, City: e.target.value })}
                                         ></input>
                                     </div>
@@ -143,7 +158,16 @@ const Edit = () => {
                                         type="submit"
                                         className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                     >
-                                        Create Account <ArrowRight className="ml-2" size={16} />
+                                        Submit Student Data <ArrowRight className="ml-2" size={16} />
+                                    </button>
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => navigate("/")}
+                                        type="submit"
+                                        className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                                    >
+                                        Cancel Student Data <ArrowRight className="ml-2" size={16} />
                                     </button>
                                 </div>
                             </div>
