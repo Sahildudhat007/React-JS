@@ -40,9 +40,9 @@ const Create = () => {
                             </svg>
                         </div>
                         <h2 className="text-center text-2xl font-bold leading-tight text-black">
-                            Sign up to create account
+                            Add Student
                         </h2>
-                        <p className="mt-2 text-center text-base text-gray-600">
+                        {/* <p className="mt-2 text-center text-base text-gray-600">
                             Already have an account?{' '}
                             <Link
                                 to="/register"
@@ -51,7 +51,7 @@ const Create = () => {
                             >
                                 Sign In
                             </Link>
-                        </p>
+                        </p> */}
                         <form onSubmit={onSubmitStudent} action="#" method="POST" className="mt-8">
                             <div className="space-y-5">
                                 <div>
@@ -143,7 +143,7 @@ const Create = () => {
                                         type="submit"
                                         className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                     >
-                                        Create Account <ArrowRight className="ml-2" size={16} />
+                                        Add Student <ArrowRight className="ml-2" size={16} />
                                     </button>
                                 </div>
                             </div>

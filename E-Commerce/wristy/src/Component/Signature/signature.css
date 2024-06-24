@@ -1,0 +1,26 @@
+.cta-wrap{
+    background-image: url('../../Assets/asset\ 47.jpeg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 60px;
+}
+
+@media (max-width:576px) {
+    .cta{
+        margin-bottom: 30px;
+    }
+    .w-layout-blockcontainer{
+        padding: 10px 20px;
+    }
+    .cta-wrap{
+        width: 100%;
+        padding: 20px 13px;
+    }
+    .cta-title{
+        font-size: 22px;
+    }
+    .cta-text{
+        font-size: 12px;
+    }
+}

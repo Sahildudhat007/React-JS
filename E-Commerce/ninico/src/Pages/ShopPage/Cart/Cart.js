@@ -28,7 +28,7 @@ const Cart = () => {
     }
 
     const CartlistItem = useSelector((state) => state.cartreducer.carts);
-    const quantities = useSelector((state) => state.cartreducer.Quantities);
+    const quantities = useSelector((state) => state.cartreducer.quantities);
     console.log(CartlistItem);
 
     const changeQuantity = (event, id) => {
@@ -81,15 +81,21 @@ const Cart = () => {
                                                         </td>
                                                         <td className="whitespace-nowrap">${rate}.00</td>
                                                         <td className="whitespace-nowrap">
-                                                            <div className='input flex items-center justify-between border px-2'>
-                                                                <div className='input-text'>
+                                                            {/* <div className='input flex items-center justify-between border px-2'> */}
+                                                            {/* <div className='input-text'>
                                                                     <p>{quantity}</p>
-                                                                </div>
-                                                                <div className='input-btn flex flex-col'>
+                                                                </div> */}
+                                                            {/* <div className='input-btn flex flex-col'>
                                                                     <button onClick={() => Inc_Cart(item)}><IoMdArrowDropup /></button>
                                                                     <button onClick={() => Dec_Cart(item)}><IoMdArrowDropdown /></button>
-                                                                </div>
-                                                            </div>
+                                                                </div> */}
+                                                            <input onChange={(event) => changeQuantity(event, id)}
+                                                                type='number'
+                                                                name='number'
+                                                                defaultValue={1}
+                                                                min="1"
+                                                                className='outline-none input-number border-none focus:border-none mx-2' />
+                                                            {/* </div> */}
                                                         </td>
                                                         {/* <td className="whitespace-nowrap">${rate * quantity}.00</td> */}
                                                         <td className="whitespace-nowrap">${totalPrice.toFixed(2)}</td>

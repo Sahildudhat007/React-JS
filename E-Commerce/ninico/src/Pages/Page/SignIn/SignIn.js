@@ -6,6 +6,9 @@ import PageHeading from '../../../Component/PageHeading/PageHeading';
 import loginbg from '../../../Assets/loginbg.jpg'
 import signbg from '../../../Assets/signbg.jpg'
 
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 import { LuLock } from "react-icons/lu";
 import { FaRegUser } from "react-icons/fa6";
 import { GoKey } from "react-icons/go";
@@ -18,70 +21,90 @@ import Swal from 'sweetalert2'
 
 import './signin.css'
 
+const SignupSchema = Yup.object({
+    Email: Yup.string().email("Invalid Email").required("Email is Required Field"),
+    Password: Yup.string()
+    .min(2, 'Too Short!')
+    .max(10, 'Too Long!')
+    .required('Password is Required Field')
+})
+
 const SignIn = () => {
 
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("");
 
-    const getemail = localStorage.getItem("Email");
-    const getpassword = localStorage.getItem("Password");
+    // const getemail = localStorage.getItem("Email");
+    // const getpassword = localStorage.getItem("Password");
 
-    function onSubmitFun(e) {
-        e.preventDefault();
-        if (!email || !password) {
-            alert("fill all data");
-        } else {
-            alert("Succesfully register");
-            localStorage.setItem("Email", email);
-            localStorage.setItem("Password", password);
-            navigate("/")
+    // function onSubmitFun(e) {
+    //     e.preventDefault();
+    //     if (!email || !password) {
+    //         alert("fill all data");
+    //     } else {
+    //         alert("Succesfully register");
+    //         localStorage.setItem("Email", email);
+    //         localStorage.setItem("Password", password);
+    //         navigate("/")
+    //     }
+    // }
+
+    // function onSubmitlogin(e) {
+    //     e.preventDefault();
+    //     if (!email && !password) {
+    //         alert("fill all data");
+    //     } else if (email !== getemail || password !== getpassword) {
+    //         alert("plz fill currect details");
+    //     }
+    //     else {
+    //         alert("succesfully login user")
+    //     }
+    // }
+
+    // const handleClick = () =>{
+    //     Swal.fire({
+    //         title: "Good job!",
+    //         text: "You clicked the button!",
+    //         icon: "success"
+    //       });
+    // }
+
+    const { values, handleChange, handleSubmit, handleBlur, errors, touched } = useFormik({
+        initialValues: {
+            Email: "",
+            Password: ""
+        },
+        validationSchema: SignupSchema,
+
+        onSubmit: (value) => {
+            console.log(value, "value");
+        }
+    })
+    console.log(values, "values")
+    console.log(useFormik);
+    console.log(touched, "touched")
+
+    function HandleChange_2 () {
+        return {
+            handleChange
         }
     }
 
-    function onSubmitlogin(e) {
-        e.preventDefault();
-        if (!email && !password) {
-            alert("fill all data");
-        } else if (email !== getemail || password !== getpassword) {
-            alert("plz fill currect details");
-        }
-        else {
-            alert("succesfully login user")
-        }
-    }
-
-    const handleClick = () =>{
-        Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-          });
+    function handleBlur_2 () {
+        handleBlur()
     }
 
     return (
         <div>
             <div>
                 <PageHeading goBackLink='Home' pageTitle='Sign In'/>
-                {/* <div className='relative'>
-                    <img src={breadcrumb01} alt="" className='w-[100%] h-[250px]' />
-                    <div className='absolute top-16 pl-5'>
-                        <div className=' flex items-center'>
-                            <button onClick={backToHome} className='hover:text-rose-600 font-semibold'>Home</button>
-                            <p className='flex items-center text-gray-500'>
-                                <IoRemoveOutline className="text-3xl mt-1" />
-                                Sign In
-                            </p>
-                        </div>
-                        <h1 className='text-4xl font-bold'>Sign In</h1>
-                    </div>
-                </div> */}
             </div>
             <div className='track-area my-16'>
                 <div className='container mx-auto px-5'>
                     <div className='grid lg:grid-cols-2 gap-7'>
-                        <form onSubmit={onSubmitFun}>
+                        <form onSubmit={handleSubmit}>
                             <div className='tptrack-product'>
                                 <div className='tptrack-thumb'>
                                     <img src={signbg} alt="signbg" className='w-full' />
@@ -97,15 +120,15 @@ const SignIn = () => {
                                         </div>
                                     </div>
                                     <div className='tptrack-id mb-3'>
-                                        <form action="#" className='flex items-center bg-white'>
+                                        <form onSubmit={handleSubmit} action="#" className='flex items-center bg-white'>
                                             <span className='text-xl ml-6'><MdOutlineMailOutline /></span>
-                                            <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='Email address' className='w-[100%] h-[55px] pl-3' />
+                                            <input type="email" name='Email' value={values.Email} onChange={handleChange} onBlur={handleBlur} placeholder='Email address' className='w-[100%] h-[55px] pl-3' />
                                         </form>
                                     </div>
                                     <div className='tptrack-id bg-white mb-4'>
-                                        <form action="#" className='flex items-center '>
+                                        <form onSubmit={handleSubmit} action="#" className='flex items-center '>
                                             <span className='text-lg ml-6'><GoKey /> </span>
-                                            <input type="email" onChange={(e) => setPassword(e.target.value)} placeholder='Password' className='w-[100%] h-[55px] pl-3' />
+                                            <input type="password" name='Password' value={values.Password} onChange={handleChange} onBlur={handleBlur} placeholder='Password' className='w-[100%] h-[55px] pl-3' />
                                         </form>
                                     </div>
                                     <div className='tpsign-remember mb-5'>
@@ -114,14 +137,14 @@ const SignIn = () => {
                                         </div>
                                     </div>
                                     <div className='tptrack-btn tptrack-btn2'>
-                                        <button onClick={handleClick} className='tptrack-submition font-semibold flex items-center justify-center rounded-md w-full h-[50px]'>Register Now
+                                        <button className='tptrack-submition font-semibold flex items-center justify-center rounded-md w-full h-[50px]'>Register Now
                                             <FaArrowRightLong className='ml-4' />
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
-                        <form onSubmit={onSubmitlogin}>
+                        <form onSubmit={handleSubmit}>
                             <div className='tptrack-product'>
                                 <div className='tptrack-thumb'>
                                     <img src={loginbg} alt="loginbg" className='w-full' />
@@ -137,16 +160,16 @@ const SignIn = () => {
                                         </div>
                                     </div>
                                     <div className='tptrack-id mb-3'>
-                                        <form action="#" className='flex items-center bg-white'>
+                                        <div  className='flex items-center bg-white'>
                                             <span className='text-lg ml-6'><FaRegUser /></span>
-                                            <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='Username / email address' className='w-[100%] h-[55px] pl-3' />
-                                        </form>
+                                            <input type="email" name='Email' value={values.Email} onChange={HandleChange_2} onBlur={handleBlur} placeholder='Username / email address' className='w-[100%] h-[55px] pl-3' />
+                                        </div>
                                     </div>
                                     <div className='tptrack-id bg-white mb-4'>
-                                        <form action="#" className='flex items-center '>
+                                        <div  className='flex items-center '>
                                             <span className='text-lg ml-5'><GoKey /> </span>
-                                            <input type="email" onChange={(e) => setPassword(e.target.value)} placeholder='Password' className='w-[100%] h-[55px] pl-3' />
-                                        </form>
+                                            <input type="password" name='Password' value={values.Password} onChange={handleChange} onBlur={handleBlur} placeholder='Password' className='w-[100%] h-[55px] pl-3' />
+                                        </div>
                                     </div>
                                     <div className='tpsign-remember flex justify-between mb-5'>
                                         <div className='form-check'>
@@ -158,8 +181,8 @@ const SignIn = () => {
                                         </div>
                                     </div>
                                     <div className='tptrack-btn'>
-                                        <button onClick={handleClick} className='tptrack-submition bg-rose-600 text-white font-semibold flex items-center justify-center rounded-md w-full h-[50px]'>Login Now
-                                            <FaArrowRightLong className='ml-4' />
+                                        <button className='tptrack-submition bg-rose-600 text-white font-semibold flex items-center justify-center rounded-md w-full h-[50px]'>Login Now
+                                            <FaArrowRightLong className='ml-4'/>
                                         </button>
                                     </div>
                                 </div>

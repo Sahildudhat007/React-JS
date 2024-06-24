@@ -1,0 +1,11 @@
+@media (max-width:576px) {
+    .blog-heading{
+        padding-block: 30px;
+    }
+    .section-heading{
+        font-size: 25px;
+    }
+    .blog-btn{
+        margin-top: 27px;
+    }
+}

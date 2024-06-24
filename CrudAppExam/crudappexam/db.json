@@ -1,0 +1,11 @@
+{
+    "people":[
+        {
+            "Firstname": "Sahil",
+            "Lastname": "Dudhat",
+            "Gender": "Male",
+            "Age": "22",
+            "City": "Surat, Gujrat"
+        }
+    ]
+}

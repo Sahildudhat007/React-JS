@@ -64,18 +64,22 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="hidden space-x-2 lg:block">
-                        <button
-                            type="button"
-                            className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold border border-black text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                        >
-                            <Link to='/login'>LogIn</Link>
-                        </button>
-                        <button
-                            type="button"
-                            className="rounded-md border bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                        >
-                            <Link to="/register">Register</Link>
-                        </button>
+                        <Link to='/login'>
+                            <button
+                                type="button"
+                                className="rounded-md bg-transparent px-3 py-2 text-sm font-semibold border border-black text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                LogIn
+                            </button>
+                        </Link>
+                        <Link to="/register">
+                            <button
+                                type="button"
+                                className="rounded-md border bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                Register
+                            </button>
+                        </Link>
                     </div>
                     <div className="lg:hidden">
                         <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />

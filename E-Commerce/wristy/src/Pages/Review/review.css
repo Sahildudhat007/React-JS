@@ -1,0 +1,12 @@
+.star-wrap .star{
+    margin-right: 2px;
+}
+
+@media (max-width:576px) {
+    .review-block{
+        padding: 20px;
+    }
+    .star-wrap{
+        margin-bottom: 30px;
+    }
+}

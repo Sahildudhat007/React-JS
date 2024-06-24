@@ -1,0 +1,15 @@
+
+@media (max-width:576px) {
+    .contact-page{
+        padding-inline: 20px;
+    }
+    .contact-wrap{
+        gap: 0px;
+    }
+}
+
+@media (max-width:768px) {
+    .contact-wrap{
+        gap: 0px;
+    }
+}

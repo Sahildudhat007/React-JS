@@ -1,12 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+function showAlert() {
+    toast.success('Login Succesfully', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+    });
+}
+
+function show_Error_Alert() {
+    toast.error('Please fill all fields', {
+        position: "bottom-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+    });
+}
 
 const Register = () => {
+
+    const navigate = useNavigate();
+    const [fname, setFname] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    function onSubmitRegister(e) {
+        e.preventDefault();
+        if ( !fname || !email || !password) {
+            show_Error_Alert()
+        } else {
+            localStorage.setItem("Firstname", fname);
+            localStorage.setItem("Email", email);
+            localStorage.setItem("Password", password);
+            showAlert()
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+        }
+    }
+
     return (
         <div>
             <section>
+                <ToastContainer />
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
                         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
@@ -21,7 +74,7 @@ const Register = () => {
                                     Sign In
                                 </Link>
                             </p>
-                            <form action="#" method="POST" className="mt-8">
+                            <form onSubmit={onSubmitRegister} action="#" method="POST" className="mt-8">
                                 <div className="space-y-5">
                                     <div>
                                         <label htmlFor="name" className="text-base font-medium text-gray-900">
@@ -34,6 +87,7 @@ const Register = () => {
                                                 type="text"
                                                 placeholder="Full Name"
                                                 id="name"
+                                                onChange={(e) => setFname(e.target.value)}
                                             ></input>
                                         </div>
                                     </div>
@@ -48,6 +102,7 @@ const Register = () => {
                                                 type="email"
                                                 placeholder="Email"
                                                 id="email"
+                                                onChange={(e) => setEmail(e.target.value)}
                                             ></input>
                                         </div>
                                     </div>
@@ -64,15 +119,17 @@ const Register = () => {
                                                 type="password"
                                                 placeholder="Password"
                                                 id="password"
+                                                onChange={(e) => setPassword(e.target.value)}
                                             ></input>
                                         </div>
                                     </div>
                                     <div>
                                         <button
-                                            type="button"
+                                            // onClick={backTohome}
+                                            type="submit"
                                             className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                         >
-                                            Create Account <ArrowRight className="ml-2" size={16} />
+                                            Register <ArrowRight className="ml-2" size={16} />
                                         </button>
                                     </div>
                                 </div>

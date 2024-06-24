@@ -1,0 +1,16 @@
+
+
+@media (max-width:576px) {
+    .w-layout{
+        padding: 10px 20px;
+    }
+    .footer-wrap{
+        padding: 10px 0;
+    }
+    .ft-left{
+        padding: 0;
+    }
+    .ft-bottom{
+        padding: 10px 10px;
+    }
+}
