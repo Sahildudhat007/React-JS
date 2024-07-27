@@ -209,6 +209,57 @@ const dataBase = {
             rate : "$ 395.00 USD"
         }
     ],
+
+    productData1 : [
+        {
+            id : 1,
+            img : assets13,
+            product : "Elite Enigma Digital",
+            rate : "$ 290.00 USD"
+        },
+        {
+            id : 2,
+            img : assets14,
+            product : "Regency Royale Digital",
+            rate : "$ 374.00 USD"
+        },
+        {
+            id : 3,
+            img : assets15,
+            product : "Noble Chronograph",
+            rate : "$ 320.00 USD"
+        },
+        {
+            id : 4,
+            img : assets16,
+            product : "Supreme Sapphire",
+            rate : "$ 355.00 USD"
+        },
+        {
+            id : 5,
+            img : assets17,
+            product : "Mastercraft Chrono",
+            rate : "$ 298.00 USD"
+        },
+        {
+            id : 6,
+            img : assets18,
+            product : "Sovereign Signature",
+            rate : "$ 405.00 US"
+        },
+        {
+            id : 7,
+            img : assets19,
+            product : "Timeless Elegance",
+            rate : "$ 220.00 USD"
+        },
+        {
+            id : 8,
+            img : assets20,
+            product : "Zenith Zephyr",
+            rate : "$ 210.00 USD"
+        }
+    ]
 }
 
 export default dataBase

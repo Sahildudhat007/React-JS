@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
+
+import Faqs from '../../Component/Faqs/Faqs'
 
 // css link
 import './contact.css'
@@ -6,12 +9,23 @@ import './contact.css'
 // assets link
 import asset71 from '../../Assets/asset 71.jpg'
 import asset72 from '../../Assets/asset 72.jpg'
-import asset73 from '../../Assets/asset 73.jpg'
+import Signature from '../../Component/Signature/Signature'
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function Contact() {
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
     return (
         <div>
-            <div className='contact-page container mx-auto px-10'>
+            <div className='contact-page container mx-auto px-10 mb-12'>
                 <div className='page-title'>
                     <div className='blog-heading flex justify-between py-14'>
                         <div>
@@ -22,7 +36,7 @@ function Contact() {
                 </div>
                 <section className='contact mb-24'>
                     <div className='contact-wrap grid md:grid-cols-1 lg:grid-cols-2 gap-12'>
-                        <div className='contact-img'>
+                        <div className='contact-img' data-aos="fade-right">
                             <img src={asset71} alt="" />
                         </div>
                         <div className='contact-data flex flex-col justify-center'>
@@ -122,14 +136,14 @@ function Contact() {
                         </div>
                     </div>
                 </section>
-                <section className='contact-info'>
+                <section className='contact-info overflow-hidden'>
                     <div className='contact-info-wrap items-center grid lg:grid-cols-2 gap-12'>
                         <div className='contact-left'>
                             <p className='contact-top mb-7'>Feel free to adjust the description to include specific contact details such as email address, phone number, and physical address as needed.</p>
                             <div className='contact-left-data'>
                                 <div className='contact-block grid grid-cols-2 items-center'>
                                     <div className='contact-title'>
-                                        <p>Location</p> 
+                                        <p>Location</p>
                                     </div>
                                     <div className='contact-right'>
                                         <p className='text-sm'>4517 Washington Ave. Manchester,<br /> Kentucky 39495</p>
@@ -172,13 +186,19 @@ function Contact() {
                                 <hr className='my-4 border-gray-400' />
                             </div>
                         </div>
-                        <div className='contact-image'>
-                            <img src={asset72} alt="" />
+                        <div className='contact-image' data-aos="fade-left">
+                            <img src={asset72} alt=""  />
                         </div>
                     </div>
                 </section>
             </div>
-        </div>
+            <div>
+                <Faqs />
+            </div>
+            <div>
+                <Signature />
+            </div>
+        </div >
     )
 }
 

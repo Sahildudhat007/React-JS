@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
 
 const Create = () => {
+
+    const navigate = useNavigate();
+    const[student, setStudent] = useState({
+        Firstname : "",
+        Lastname : "",
+        Gender : "",
+        Age : "",
+        City : ""
+    })
+
+    const onsubmitStudent = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:3001/people", student)
+        navigate("/")
+    }
     
     return (
         <section>
@@ -25,7 +41,7 @@ const Create = () => {
                     <h2 className="text-center text-2xl font-bold leading-tight text-black">
                         Edit Student Data
                     </h2>
-                    <form onSubmit={submitData} action="#" method="POST" className="mt-8">
+                    <form onSubmit={onsubmitStudent} action="#" method="POST" className="mt-8">
                         <div className="space-y-5">
                             <div>
                                 <label htmlFor="name" className="text-base font-medium text-gray-900">
@@ -38,6 +54,7 @@ const Create = () => {
                                         type="text"
                                         placeholder="Firstname"
                                         id="name"
+                                        name='Firstname'
                                         onChange={(e) => setStudent({ ...student, Firstname: e.target.value })}
                                     ></input>
                                 </div>
@@ -53,6 +70,7 @@ const Create = () => {
                                         type="text"
                                         placeholder="Lastname"
                                         id="name"
+                                        name='Lastname'
                                         onChange={(e) => setStudent({ ...student, Lastname: e.target.value })}
                                     ></input>
                                 </div>
@@ -70,6 +88,7 @@ const Create = () => {
                                         type="text"
                                         placeholder="Gender"
                                         id="Gender"
+                                        name='Gender'
                                         onChange={(e) => setStudent({ ...student, Gender: e.target.value })}
                                     ></input>
                                 </div>
@@ -87,6 +106,7 @@ const Create = () => {
                                         type="number"
                                         placeholder="Age"
                                         id="Age"
+                                        name='Age'
                                         onChange={(e) => setStudent({ ...student, Age: e.target.value })}
                                     ></input>
                                 </div>
@@ -104,14 +124,14 @@ const Create = () => {
                                         type="text"
                                         placeholder="City"
                                         id="City"
+                                        name='City'
                                         onChange={(e) => setStudent({ ...student, City: e.target.value })}
                                     ></input>
                                 </div>
                             </div>
                             <div>
                                 <button
-
-                                    type="button"
+                                    type="submit"
                                     className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                 >
                                     Create Account <ArrowRight className="ml-2" size={16} />

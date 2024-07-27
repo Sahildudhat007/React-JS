@@ -22,7 +22,7 @@ function Footer() {
         <div>
             <section className='footer border-t'>
                 <div className='w-layout container mx-auto px-10'>
-                    <div className='ft-logo-wrap flex flex-wrap items-center text-center gap-5 justify-between py-6'>
+                    <div className='ft-logo-wrap grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 items-center text-center gap-5 justify-between py-6'>
                         <img src={asset33} alt="" />
                         <img src={asset34} alt="" />
                         <img src={asset35} alt="" />
@@ -36,7 +36,7 @@ function Footer() {
                         <div className=" flex max-w-8xl flex-col items-start space-x-8 md:flex-row">
                             <div className="ft-left w-full px-4 md:w-3/4 lg:px-0">
                                 <h1 className="max-w-sm text-xl font-semibold mb-2 text-white">STAY IN TOUCH.</h1>
-                                <p className="max-w-sm text-sm text-white">Subscribe to our newsletter and stay updated on the latest trends, exclusive offers & exciting releases in the world of watches.</p>
+                                <p className="max-w-sm text-sm text-stone-300">Subscribe to our newsletter and stay updated on the latest trends, exclusive offers & exciting releases in the world of watches.</p>
                                 <form action="" className="mt-4 inline-flex w-full items-center md:w-3/4">
                                     <input
                                         className="flex h-10 w-full border border-white/30 bg-transparent px-3 py-2 placeholder:text-xs text-white placeholder:text-gray focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"

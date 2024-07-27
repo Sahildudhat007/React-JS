@@ -13,9 +13,8 @@ import assets67 from '../../Assets/asset 67.jpg'
 import assets68 from '../../Assets/asset 68.jpg'
 import assets69 from '../../Assets/asset 69.jpg'
 import assets70 from '../../Assets/asset 70.jpg'
+import Signature from '../../Component/Signature/Signature';
 
-import Signature from '../../Component/Signature/Signature'
-import Footer from '../../Component/Footer/Footer'
 
 function Review() {
     return (
@@ -159,12 +158,9 @@ function Review() {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Signature />
-                </div>
-                <div>
-                    <Footer/>
-                </div>
+            </div>
+            <div>
+                <Signature/>
             </div>
         </div>
     )

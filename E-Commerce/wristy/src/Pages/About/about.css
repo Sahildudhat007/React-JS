@@ -1,0 +1,179 @@
+.story-img{
+    width: 100%;
+    max-width: 32%;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-main-img{
+    width: 100%;
+    max-width: 68%;
+    position: relative;
+    overflow: hidden;
+}
+
+.innovation-wrap{
+    grid-column-gap: 40px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: grid;
+}
+
+.innovation-img{
+    grid-area: span 2 / span 1 / span 2 / span 1;
+}
+
+.features-block{
+    text-align: center;
+    flex-flow: column;
+    display: flex;
+    align-items: center;
+}
+
+/* .about-right{
+    position: relative;
+} */
+
+/* .linear{
+    z-index: 1;
+    background-color: linear-gradient(270deg, rgba(255, 255, 255, 0), #fff);
+    width: 80px;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: auto;
+} */
+
+/* .linear .right{
+    background-color: linear-gradient(270deg, #fff, rgba(255, 255, 255, 0));
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: 0%;
+} */
+
+.story-btm{
+    grid-column-gap: 30px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    transform: rotate3d(100px, 0, 0) scale3d(1, 1, 1) rotateX('0deg') rotateY('0deg') rotateZ('0deg') skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+
+@media (max-width:992px) {
+    /* .story-img img{
+        height: 75vh;
+    } */
+    /* .story-main-img img{
+        width: 100%;
+        height: 75vh;
+    } */
+    .story-left{
+        grid-column-gap: 38px;
+        flex-flow: row-reverse;
+        justify-content: flex-end;
+        align-items: flex-start;
+        max-width: 100%;
+        display: flex;
+    }
+    .story-info{
+        width: 100%;
+        max-width: 28%;
+    }
+    .story-right{
+        max-width: 68%;
+        margin-left: auto;
+    }
+    /* .section-wrap {
+        grid-column-gap: 0px;
+        grid-row-gap: 25px;
+        flex-flow: column-reverse;
+        justify-content: flex-start;
+        align-items: stretch;
+    } */
+}
+
+@media (max-width:768px) {
+    .story-main-img{
+        max-width: 100%;
+    }
+    .story-left{
+        grid-column-gap: 0px;
+        flex-flow: column-reverse;
+    }
+    .story-right{
+        max-width: 100%;
+    }
+    .story-info{
+        max-width: 100%;
+    }
+}
+
+@media (max-width:576px) {
+    .about{
+        padding-inline: 20px;
+    }
+    .about-wrap{
+        padding-inline: 20px;
+    }
+    .about-text{
+        margin-bottom: 20px;
+    }
+    .about-data{
+        margin-bottom: 30px;
+    }
+    .story-img{
+        display: none;
+    }
+    .story-info{
+        margin-bottom: 10px;
+    }
+    .our-mission{
+        padding-inline: 20px;
+        margin-bottom: 30px;
+    }
+    .our-vision{
+        padding-inline: 20px;
+        margin-bottom: 30px;
+    }
+    .innovation{
+        margin-bottom: 30px;
+    }
+    .innovation-img{
+        display: none;    
+    }
+    .invocation-co{
+        padding-inline: 20px;
+    }
+    .innovation-wrap{
+        padding-block: 20px;
+        grid-column-gap: 10px;
+        grid-row-gap: 30px;
+        grid-template-columns: 1fr;
+    }
+    .empowerment{
+        padding-inline: 20px;
+        margin-bottom: 30px;
+    }
+    .team-co{
+        padding-inline: 20px;
+        margin-bottom: 30px;
+    }
+    .team-wrap{
+        gap: 10px;
+    }
+    .feature-co{
+        padding-inline: 20px;
+        margin-bottom: 30px;
+    }
+}

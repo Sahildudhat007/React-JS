@@ -15,21 +15,22 @@ const Edit = () => {
         City: ""
     });
 
-    const editData = async () => {
+    const editData = async (e) => {
         const res = await axios.put(`http://localhost:3001/people/${id}`);
         setStudent = (res.data)
+    }
+    
+    const submitData = async (e) => {
+        e.preventDefault();
+        await axios.post(`http://localhost:3000/people/${id}`, student);
+        navigate("/");
     }
 
     useEffect(() => {
         editData();
     }, [])
 
-    const submitData = async (e) => {
-        e.preventDefault();
-        await axios.post(`http://localhost:3001/people/${id}`, student);
-        navigate("/");
-    }
-
+    
     return (
         <section>
             <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
@@ -141,8 +142,7 @@ const Edit = () => {
                             </div>
                             <div>
                                 <button
-
-                                    type="button"
+                                    type="submit"
                                     className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                                 >
                                     Create Account <ArrowRight className="ml-2" size={16} />

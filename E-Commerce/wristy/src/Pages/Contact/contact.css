@@ -2,9 +2,13 @@
 @media (max-width:576px) {
     .contact-page{
         padding-inline: 20px;
+        margin-bottom: 20px;
     }
     .contact-wrap{
         gap: 0px;
+    }
+    .faq-right{
+        padding: 0;
     }
 }
 

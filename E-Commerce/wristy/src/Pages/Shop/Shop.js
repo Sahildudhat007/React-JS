@@ -9,7 +9,6 @@ import './shop.css'
 import CommonShop from './CommonShop'
 import CommonData from '../../Component/CommonData/CommonData'
 import Signature from '../../Component/Signature/Signature';
-import Footer from '../../Component/Footer/Footer';
 
 function Shop() {
     return (
@@ -36,13 +35,10 @@ function Shop() {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Signature/>
-                </div>
-                <div>
-                    <Footer/>
-                </div>
             </section>
+            <div>
+                <Signature/>
+            </div>
         </div>
     )
 }

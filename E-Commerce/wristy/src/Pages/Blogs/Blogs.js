@@ -4,14 +4,13 @@ import React from 'react'
 import { HiArrowLongRight } from "react-icons/hi2";
 
 // css link
-import './blog.css'
+import './blogs.css'
 
 import Commonblog from './Commonblog';
 import CommonData from '../../Component/CommonData/CommonData';
-import Footer from '../../Component/Footer/Footer';
 import Signature from '../../Component/Signature/Signature';
 
-function Blog() {
+function Blogs() {
     return (
         <div>
             <section className='blogs'>
@@ -36,15 +35,12 @@ function Blog() {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <Signature />
-                </div>
-                <div>
-                    <Footer />
-                </div>
             </section>
+            <div>
+                <Signature/>
+            </div>
         </div>
     )
 }
 
-export default Blog
+export default Blogs

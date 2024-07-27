@@ -6,14 +6,24 @@ const Home = () => {
 
     const [people, setPeople] = useState([]);
 
-    const peopleData = async () => {
+    const loadUser = async () => {
         const res = await axios.get("http://localhost:3001/people");
-        console.log(res, "res");
+        console.log(res.data, "res");
         setPeople(res.data)
     }
 
+    const onDelete = (id) => {
+        axios.delete(`http://localhost:3001/people/${id}`)
+        .then((response)=>{
+            loadUser();
+        })
+        .catch((error) => {
+            console.log(error, 'error')
+        })
+    }
+
     useEffect(() => {
-        peopleData();
+        loadUser();
     })
 
     return (
@@ -111,7 +121,7 @@ const Home = () => {
                                                     <Link to={`/edit/${person.id}`}>
                                                         <button className='text-md text-gray-600'> Edit / </button>
                                                     </Link>
-                                                    <Link href="#">
+                                                    <Link onClick={()=>onDelete(person.id)} to="">
                                                         <button className='text-md mx-1 text-gray-600'> Delete </button>
                                                     </Link>
                                                 </td>
