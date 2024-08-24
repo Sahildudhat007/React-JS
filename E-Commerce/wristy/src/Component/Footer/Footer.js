@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // asset
 import asset33 from '../../Assets/asset 33.svg'
@@ -55,13 +56,13 @@ function Footer() {
                                 <div className=''>
                                     <h1 className='ft-sub-title text-white mb-2'>PAGES</h1>
                                         <ul className='ft-menu'>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>About us</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>Categories</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>Shop</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>Blogs</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>Reviews</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>FAQ</a></li>
-                                            <li><a href="" className='text-zinc-400 text-sm hover:text-white'>Contact us</a></li>
+                                            <li><Link to="about" className='text-zinc-400 text-sm hover:text-white'>About us</Link></li>
+                                            <li><Link to="categories" className='text-zinc-400 text-sm hover:text-white'>Categories</Link></li>
+                                            <li><Link to="shop" className='text-zinc-400 text-sm hover:text-white'>Shop</Link></li>
+                                            <li><Link to="blogs" className='text-zinc-400 text-sm hover:text-white'>Blogs</Link></li>
+                                            <li><Link to="reviews" className='text-zinc-400 text-sm hover:text-white'>Reviews</Link></li>
+                                            <li><Link to="/faq" className='text-zinc-400 text-sm hover:text-white'>FAQ</Link></li>
+                                            <li><Link to="contact" className='text-zinc-400 text-sm hover:text-white'>Contact us</Link></li>
                                         </ul>
                                 </div>
                                 <div className=''>

@@ -1,185 +1,121 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-// assets link
+// * image import
+import asset0 from '../../Assets/asset 0.svg'
 import asset102 from '../../Assets/asset102.svg'
-import asset109 from '../../Assets/asset109.svg'
-import asset110 from '../../Assets/asset110.svg'
-import asset111 from '../../Assets/asset 111.svg'
 
-// css link
-import './navbar.css'
-import { Link } from 'react-router-dom';
+// ? ICONS
+import { Menu, Search, ShoppingBag, User, X } from 'lucide-react';
+import { useSelector } from 'react-redux';
 
-import { Menu, X } from 'lucide-react'
+// * navLink data 
+const navLinks = ["about", "categories", "shop", "blogs", "reviews", "contact"];
 
-const menuItems = [
-    {
-        name: 'About',
-        to: 'about',
-    },
-    {
-        name: 'Categories',
-        to: 'categories',
-    },
-    {
-        name: 'Shop',
-        to: 'shop',
-    },
-    {
-        name: 'Blogs',
-        to: 'blogs',
-    },
-    {
-        name: 'Reviews',
-        to: 'reviews',
-    },
-    {
-        name: 'Contact',
-        to: 'contact',
-    },
-]
+function NavBar() {
 
-function Navbar() {
+    const [openSearchBox, setOpenSearchBox] = useState(false);
+    const [openMobileMenu, setOpenMobileMenu] = useState(false);
+    // const [cartCount, setCartCount] = useState(1);
 
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    const navigate = useNavigate();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
+    // redux concept
+    const data = useSelector((state) => state.cartreducer.carts)
+    // console.log(data, "data")
 
     return (
-        <div>
-            <div className="relative w-full bg-white border-b ">
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-                    <div className="inline-flex items-center space-x-2">
-                        <Link to="/">
-                            <img src={asset102} alt="" />
+        <div className='border-b border-gray-500 relative min-h-16'>
+
+            <nav className='nav w-[100%] mx-auto px-10 inset-0 flex items-center justify-between absolute z-20 bg-black'>
+
+                <Link to={'/'} className='logoBox'>
+                    <img src={asset0} alt="logoImage" />
+                </Link>
+
+                <div className='nevLinkWrp hidden lg:block'>
+
+                    <ul className='nevLink flex items-center gap-x-6'>
+                        {navLinks.map((val) => {
+                            return (
+                                <li key={val} className='text-white capitalize text-sm font-normal'>
+                                    <Link to={`/${val}`}>{val}</Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
+
+                </div>
+
+                <div className="navBtn_Box flex items-center gap-4">
+
+                    <div className='search_box text-white relative hidden lg:flex '>
+                        {openSearchBox &&
+                            <ul className={`${openSearchBox ? " searchAnimation " : ""} search bg-white text-black flex items-center justify-center rounded-3xl h-10 gap-x-2 px-2 absolute top-[50%] -translate-y-2/4 -right-1 bottom-0 mx-auto `}>
+                                <li className=""> <label htmlFor="search" className='text-xs'> <Search strokeWidth={1} /> </label>  </li>
+                                <li> <input type="text" name="" className="text-base border-none outline-none" id="search" placeholder='search...' /> </li>
+                                <li>
+                                    <button onClick={() => setOpenSearchBox(!openSearchBox)} className='flex items-center justify-center'>
+                                        <X strokeWidth={1} />
+                                    </button>
+                                </li>
+                            </ul>}
+                        <button onClick={() => setOpenSearchBox(!openSearchBox)} className='flex items-center justify-center'>
+                            <Search strokeWidth={1} />
+                        </button>
+                    </div>
+
+                    <div className='log_in_box'>
+                        <Link to={'login'} className='text-white flex items-center justify-center'>
+                            <User strokeWidth={1} />
                         </Link>
                     </div>
-                    <div className="hidden lg:block">
-                        <ul className="inline-flex space-x-6">
-                            {menuItems.map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        to={item.to}
-                                        className="text-sm text-stone-800"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+
+                    <div className='cart_box'>
+                        <Link to={'/cart'} className='text-white flex items-center justify-center gap-1' type="button" data-drawer-target="drawer-top-example" data-drawer-show="drawer-top-example" data-drawer-placement="top" aria-controls="drawer-top-example">
+                            <ShoppingBag strokeWidth={1} />
+                            <p className='capitalize text-sm font-normal'>
+                                Cart ({data.length})
+                            </p>
+                        </Link>
                     </div>
-                    <div className="hidden lg:block">
-                        <div className='nav-right flex items-center'>
-                            <Link to="">
-                                <img src={asset111} alt="" />
-                            </Link>
-                            <Link to="login" className='mx-4'>
-                                <img src={asset109} alt="" />
-                            </Link>
-                            <Link to="" className='flex items-center text-stone-800'>
-                                <img src={asset110} alt="" />
-                                cart (0)
-                            </Link>
-                        </div>
+
+                    {/* // ! Mobile Menu BTN  */}
+                    <div className='mobile_Menu block lg:hidden'>
+                        <button onClick={() => setOpenMobileMenu(!openMobileMenu)} className='text-white flex items-center justify-center'>
+                            {!openMobileMenu ? <Menu strokeWidth={1} /> : <X strokeWidth={1} />}
+                        </button>
                     </div>
-                    <div className="lg:hidden">
-                        <Menu onClick={toggleMenu} className="h-6 w-6 cursor-pointer" />
-                    </div>
-                    {isMenuOpen && (
-                        <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
-                            <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                                <div className="px-5 pb-6 pt-5">
-                                    <div className="flex items-center justify-between">
-                                        <div className="inline-flex items-center space-x-2">
-                                            <Link to="/">
-                                                <img src={asset102} alt="" />
-                                            </Link>
-                                        </div>
-                                        <div className="-mr-2">
-                                            <button
-                                                type="button"
-                                                onClick={toggleMenu}
-                                                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                            >
-                                                <span className="sr-only">Close menu</span>
-                                                <X className="h-6 w-6" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="mt-6 flex justify-center">
-                                        <nav className="grid gap-y-4 text-center">
-                                            {menuItems.map((item) => (
-                                                <a
-                                                    key={item.name}
-                                                    to={item.to}
-                                                    className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
-                                                >
-                                                    <span className="ml-3 text-center text-sm text-stone-600">
-                                                        {item.name}
-                                                    </span>
-                                                </a>
-                                            ))}
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
                 </div>
+
+            </nav>
+
+            {/* /* ----------------------- // ! Mobile Menu container ----------------------- */}
+
+            <div className={` ${!openMobileMenu ? "-top-[500%] transition-all h-0 overflow-hidden" : "mobileMenuAnimation top-0"}  z-10 Mobile_M_Container absolute  mx-auto left-0 right-0 border-b border-gray-500 bg-black py-4 `}>
+                <ul className='nevLink flex flex-col items-center gap-4 mx-auto max-w-[95%] my-4'>
+                    {navLinks.map((val) => {
+                        return (
+                            <li key={val} className='text-white capitalize text-sm font-normal'>
+                                <a href="...">{val}</a>
+                            </li>
+                        )
+                    })}
+                </ul>
+                <ul className='border rounded-3xl flex gap-x-1 items-center justify-start h-10 px-1.5 max-w-[95%] mx-auto'>
+                    <li className='text-lg'>
+                        <label htmlFor='mobile_searchBox' className='flex items-center justify-center text-gray-400'>
+                            <Search strokeWidth={1} />
+                        </label>
+                    </li>
+                    <li className='block w-full text-gray-400'>
+                        <input type="search" name="" id="mobile_searchBox" className='block text-lg w-full bg-transparent border-none outline-none' placeholder='Search...' />
+                    </li>
+                </ul>
             </div>
 
-
-            {/* <section className='header'>
-                <div className='navbar container mx-auto px-10 py-6 border-b border-stone-300'>
-                    <div className='w-layout-blockcontainer container w-container'>
-                        <div className='navbar-wrap flex items-center justify-between'>
-                            <Link to="/">
-                                <img src={asset102} alt="" />
-                            </Link>
-                            <div className='nav-menu-wrap'>
-                                <nav className='nav-menu bg w-nav-menu'>
-                                    <ul className='flex'>
-                                        <li className='mx-3'>
-                                            <Link to='about' className='text-stone-800 text-sm'>About</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="categories" className='text-stone-800 text-sm'>Categories</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="shop" className='text-stone-800 text-sm'>Shop</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="blogs" className='text-stone-800 text-sm'>Blogs</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="reviews" className='text-stone-800 text-sm'>Reviews</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="contact" className='text-stone-800 text-sm'>Contact</Link>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className='nav-right flex items-center'>
-                                <a href="#">
-                                    <img src={asset111} alt="" />
-                                </a>
-                                <a href="#" className='mx-4'>
-                                    <img src={asset109} alt="" />
-                                </a>
-                                <a href="#" className='flex items-center text-stone-800'>
-                                    <img src={asset110} alt="" />
-                                    cart (0)
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </div>
     )
 }
 
-export default Navbar
+export default NavBar

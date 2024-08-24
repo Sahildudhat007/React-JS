@@ -54,56 +54,6 @@ function Home() {
 
     return (
         <div>
-            {/* <section className='header bg-black border-b'>
-                <div className='navbar container mx-auto px-10 py-6 border-stone-600'>
-                    <div className='w-layout-blockcontainer container w-container'>
-                        <div className='navbar-wrap flex items-center justify-between'>
-                            <Link to="/">
-                                <img src={asset101} alt="" />
-                            </Link>
-                            <div className='nav-menu-wrap'>
-                                <nav className='nav-menu bg w-nav-menu'>
-                                    <ul className='flex'>
-                                        <li className='mx-3'>
-                                            <Link to="about" className='text-stone-200 text-sm'>About</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="categories" className='text-stone-200 text-sm'>Categories</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="shop" className='text-stone-200 text-sm'>Shop</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="blogs" className='text-stone-200 text-sm'>Blogs</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="reviews" className='text-stone-200 text-sm'>Reviews</Link>
-                                        </li>
-                                        <li className='mx-3'>
-                                            <Link to="contact" className='text-stone-200 text-sm'>Contact</Link>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div className='nav-right flex items-center'>
-                                <a href="#" className='search'>
-                                    <img src={asset2} alt="" />
-                                </a>
-                                <a href="#" className='user mx-3'>
-                                    <img src={asset3} alt="" />
-                                </a>
-                                <a href="#" className='flex items-center text-stone-300'>
-                                    <img src={asset4} alt="" />
-                                    cart (0)
-                                </a>
-                                <a href="#" className='menu-bar ml-4'>
-                                    <RxHamburgerMenu className='text-white text-2xl' />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
             <div className='hero-wrapper bg-black mb-28'>
                 <div className='w-container container mx-auto px-10'>
                     <div className='hero-wrap'>
@@ -118,7 +68,7 @@ function Home() {
                             <div className='hero-btm flex justify-between items-center'>
                                 <a href="#" className='hero-link'>
                                     Scroll to Explore
-                                    <img src={asset5} alt="" className='ml-2' />
+                                    <img src={asset5} alt="" className='ml-2 down-arrow' />
                                 </a>
                                 <div className='hero-img'>
                                     <img src={asset6} alt="" />
@@ -202,7 +152,7 @@ function Home() {
                                 <p className='appraisal-text text-stone-300'>Whether you're seeking a statement piece for a special occasion of an everyday watch that reflects your unique personality, our styling sessions offer tailored guidance and recommendations.</p>
                             </div>
                             <div className='appraisal-data'>
-
+                                
                             </div>
                         </div>
                         <div className='appraisal-img' data-aos="zoom-in">
@@ -219,15 +169,15 @@ function Home() {
                             <h2 className='section-heading text-3xl'>Latest Products</h2>
                         </div>
                         <div className='blog-btn mt-8'>
-                            <a href="#" className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-1' /></a>
+                            <Link to={"shop"} className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-1' /></Link>
                         </div>
                     </div>
                     <div className='w-dyn-list'>
                         <div className='post-list grid md:grid-cols-3 lg:grid-cols-4 gap-6'>
-                            {CommonData.productData1.map((shop) => {
-                                const { id, img, product, rate } = shop
+                            {CommonData.productData1.map((cvalue, index, array) => {
+                                // const { id, img, product, rate } = shop
                                 return (
-                                    <CommonProduct key={id} img={img} product={product} rate={rate} />
+                                    <CommonProduct key={index} img={cvalue.img} product={cvalue.product} rate={cvalue.rate} />
                                 )
                             })}
                         </div>
@@ -237,7 +187,7 @@ function Home() {
             <section className='banner-section mb-20'>
                 <div className='b-container container mx-auto px-10'>
                     <div className='banner-wrap'>
-                        <a href="#" className='banner-left relative w-[100%] max-w-[35%]'>
+                        <Link to={"categories"} className='banner-left relative w-[100%] max-w-[35%]'>
                             <img src={asset103} alt="" className='banner-img' />
                             <div className='banner-data absolute top-5 px-5'>
                                 <p className='banner-sub-title text-white text-sm'>Luxury watch</p>
@@ -246,8 +196,8 @@ function Home() {
                             <div className='banner-link absolute bottom-5 px-5'>
                                 <p className='text-white text-sm flex items-center'>Explore Collection <HiArrowLongRight className='text-lg mt-1 ml-1' /></p>
                             </div>
-                        </a>
-                        <a href="#" className='banner-right relative'>
+                        </Link>
+                        <Link to={"shop"} className='banner-right relative'>
                             <img src={asset104} alt="" className='banner-img' />
                             <div className='banner-data absolute top-5 px-5'>
                                 <p className='banner-sub-title text-white text-sm'>Wear professional</p>
@@ -256,7 +206,7 @@ function Home() {
                             <div className='banner-link absolute bottom-5 px-5'>
                                 <p className='text-white text-sm flex items-center'>Shop Watches <HiArrowLongRight className='text-lg mt-1 ml-1' /></p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -1,3 +1,40 @@
+.searchAnimation{
+  animation-name: searchAnimation;
+  animation-timing-function:linear;
+  animation-duration: 0.3s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes searchAnimation{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+
+.mobileMenuAnimation{
+  animation-name: mobileMenuAnimation;
+  animation-timing-function:ease-in-out ;
+  animation-duration: 0.6s;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes mobileMenuAnimation{
+  0%{
+      top : -500%;
+  }
+  100%{
+      top: 60px;
+  }
+}
+
 .App {
   text-align: center;
 }

@@ -47,10 +47,10 @@ function About() {
             <section className='our-story'>
                 <div className='about-data border-b mb-28 container mx-auto'>
                     <div className='story-wrap flex items-center gap-7 mb-6'>
-                        <div className='story-img overflow-hidden' data-aos="fade-down">
+                        <div className='story-img overflow-hidden' data-aos="fade-down" data-aos-duration="1000">
                             <img src={asset86} alt="" className='' />
                         </div>
-                        <div className='story-main-img overflow-hidden' data-aos="fade-up">
+                        <div className='story-main-img overflow-hidden' data-aos="fade-up" data-aos-duration="1000">
                             <img src={asset87} alt="" className='' />
                         </div>
                     </div>
@@ -103,15 +103,15 @@ function About() {
                             <button className='border border-black text-sm px-5 py-3 hover:bg-black hover:text-white'>Contact us</button>
                         </div>
                     </div>
-                    <div className='section-img' data-aos="fade-left">
+                    <div className='section-img' data-aos="fade-left" data-aos-duration="1000">
                         <img src={asset88} alt="" />
                     </div>
                 </div>
             </section>
             <section className='our-vision container mx-auto px-10 mb-28 overflow-hidden'>
                 <div className='section-wrap grid lg:grid-cols-2 gap-10 items-center '>
-                    <div className='section-img'>
-                        <img src={asset89} alt="" data-aos="fade-right" />
+                    <div className='section-img' data-aos="fade-right" data-aos-duration="1000">
+                        <img src={asset89} alt="" />
                     </div>
                     <div className='section-data'>
                         <h2 className='sub-heading text-3xl mb-3'>Our Vision</h2>

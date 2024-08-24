@@ -36,7 +36,7 @@ function Contact() {
                 </div>
                 <section className='contact mb-24'>
                     <div className='contact-wrap grid md:grid-cols-1 lg:grid-cols-2 gap-12'>
-                        <div className='contact-img' data-aos="fade-right">
+                        <div className='contact-img' data-aos="fade-right" data-aos-duration="1000">
                             <img src={asset71} alt="" />
                         </div>
                         <div className='contact-data flex flex-col justify-center'>
@@ -186,7 +186,7 @@ function Contact() {
                                 <hr className='my-4 border-gray-400' />
                             </div>
                         </div>
-                        <div className='contact-image' data-aos="fade-left">
+                        <div className='contact-image' data-aos="fade-left" data-aos-duration="1000">
                             <img src={asset72} alt=""  />
                         </div>
                     </div>

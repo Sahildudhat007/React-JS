@@ -1,22 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function CommonShop({img, product, rate}) {
+import ProductDetails from '../../Component/ProductDetails/ProductDetails'
+
+function CommonShop({ id, img, product, rate, quantity }) {
+
     return (
         <div>
             <div className='w-dyn-list'>
                 <div className='post-list'>
                     <div className="post">
                         <div className='img-box'>
-                            <a href="">
+                            <Link to={`/productDetails/${id}`}>
                                 <img src={img} alt="" className='post-img' />
-                            </a>
+                            </Link>
                         </div>
                         <div className="mt-3">
                             <p className='mb-2'>
-                                <a href="#" className=''>{product}</a>
+                                <Link to={`/productDetails/${id}`} className=''>{product}</Link>
                             </p>
                             <p className='mb-4'>
-                                <a href="#" className='text-sm'>{rate}</a>
+                                <a href="#" className='text-sm'>{rate}</a>  
                             </p>
                         </div>
                     </div>

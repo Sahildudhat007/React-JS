@@ -36,7 +36,7 @@ function Commoncard({ id, img, img2, title, rate, quantity }) {
 
     const SendWishlist = (e) => {
         console.log(e, "eeee")
-        dispatch(ADD_WISHLIST(e))
+        dispatch(ADD_WISHLIST(e)) 
         let find = data2.findIndex(item => item.id === e.id); 
         find === -1 ?  toast.success("This item is added to Wishlist"):  toast.error("This item is alredy in the Wishlist");
     }
