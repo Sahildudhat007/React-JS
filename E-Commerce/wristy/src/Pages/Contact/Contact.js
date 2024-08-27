@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 
 import Faqs from '../../Component/Faqs/Faqs'
 
@@ -125,7 +124,7 @@ function Contact() {
                                             <label htmlFor="" className='w-checkbox flex items-center'>
                                                 <input type="checkbox" id='checkbox' name='checkbox' className='w-3 mt-1 mr-2' />
                                                 <span className='checkbox-label'>
-                                                    <a href="#" className='agree-link text-xs'>I agree to <span className='hover:border-b border-black'>Terms</span> & <span className='hover:border-b border-black'>Privacy policy.</span></a>
+                                                    <a href="..." className='agree-link text-xs'>I agree to <span className='hover:border-b border-black'>Terms</span> & <span className='hover:border-b border-black'>Privacy policy.</span></a>
                                                 </span>
                                             </label>
                                             <button className='submit-btn border border-black text-xs px-7 py-3 hover:bg-black hover:text-white'>Submit</button>
@@ -155,7 +154,7 @@ function Contact() {
                                         <p>Email</p>
                                     </div>
                                     <div className='contact-right'>
-                                        <a href="#" className='text-sm hover:border-b border-black'>hello@example.io</a>
+                                        <a href="..." className='text-sm hover:border-b border-black'>hello@example.io</a>
                                     </div>
                                 </div>
                                 <hr className='my-4 border-gray-400' />
@@ -175,10 +174,10 @@ function Contact() {
                                     <div className='contact-right'>
                                         <div className='social-wrap'>
                                             <ul className='flex flex-wrap items-center'>
-                                                <li><a href="#" className='mr-5 text-sm hover:underline'>Instagram</a></li>
-                                                <li className='list-disc mr-5 text-sm'><a href="#" className='hover:underline'>Facebook</a></li>
-                                                <li className='list-disc mr-5 text-sm'><a href="#" className='hover:underline'>Twitter</a></li>
-                                                <li className='list-disc mr-5 text-sm'><a href="#" className='hover:underline'>YouTube</a></li>
+                                                <li><a href="..." className='mr-5 text-sm hover:underline'>Instagram</a></li>
+                                                <li className='list-disc mr-5 text-sm'><a href="..." className='hover:underline'>Facebook</a></li>
+                                                <li className='list-disc mr-5 text-sm'><a href="..." className='hover:underline'>Twitter</a></li>
+                                                <li className='list-disc mr-5 text-sm'><a href="..." className='hover:underline'>YouTube</a></li>
                                             </ul>
                                         </div>
                                     </div>

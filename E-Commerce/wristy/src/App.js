@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Faq from './Component/Faqs/Faqs';
 import Footer from './Component/Footer/Footer'
 import Navbar from './Component/Navbar/Navbar';
-import NewsArticles from './Component/NewsArticles/NewsArticles';
-import Signature from './Component/Signature/Signature';
+// import NewsArticles from './Component/NewsArticles/NewsArticles';
+// import Signature from './Component/Signature/Signature';
 import About from './Pages/About/About';
 import Blogs from './Pages/Blogs/Blogs';
 import Categories from './Pages/Categories/Categories';
@@ -41,8 +41,6 @@ function App() {
           <Footer />
         </BrowserRouter>
       </Provider>
-      {/* <ProductDetails/> */}
-
     </div>
   );
 }

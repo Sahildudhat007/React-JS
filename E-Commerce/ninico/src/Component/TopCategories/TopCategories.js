@@ -20,8 +20,8 @@ const TopCategories = () => {
                                             <span className='h-10 w-10 items-center justify-center flex text-red-600 font-semibold bg-white rounded-full shadow-xl absolute top-0 right-0'>{cvalue.num}</span>
                                         </div>
                                         <div className='tpcategory-content mt-5 cursor-pointer'>
-                                            <a href='#' className='text-link text-lg'>{cvalue.text1}</a><br/>
-                                            <a href='#' className='text-link text-lg'>{cvalue.text2}</a>
+                                            <a href='...' className='text-link text-lg'>{cvalue.text1}</a><br/>
+                                            <a href='...' className='text-link text-lg'>{cvalue.text2}</a>
                                         </div>
                                     </div>
                                 );

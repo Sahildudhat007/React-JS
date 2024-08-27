@@ -1,11 +1,10 @@
 import React from 'react'
 
 // Asset link
-import asset13 from '../../Assets/asset 13.jpeg'
 import asset48 from '../../Assets/asset 48.svg'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { REMOVE_CART, INCREMENT_CART, DECREMENT_CART, UPDATE_QUANTITY } from '../../Redux/Actions/Action';
+import { REMOVE_CART, UPDATE_QUANTITY } from '../../Redux/Actions/Action';
 
 
 function Cart() {
@@ -26,21 +25,13 @@ function Cart() {
         dispatch(UPDATE_QUANTITY(id, Quantity));
     };
 
-    let Subtotal = 0;
-    CartlistItem.forEach((item) => {
-        const Quantity = quantities[item.id] || 1;
-        Subtotal += item.rate * Quantity;
-    })
-
-    const Tax = 9.00;
-
     return (
         <div>
             <section className='w-commerce-com'>
                 <div className='commerce-cart-container container mx-auto my-20 px-10 w-[100%] max-w-[50%] align-middle'>
                     <div className='w-commerce-commercecartheader py-4 px-6 flex justify-between items-center border-b'>
                         <h4 className='w-commerce-commercecartheading text-lg'>Your Cart</h4>
-                        <a href="#" className='close'>
+                        <a href="..." className='close'>
                             <img src={asset48} alt="" />
                         </a>
                     </div>
@@ -56,7 +47,7 @@ function Cart() {
                                             <img src={img} alt="" className='w-[60px] h-[72px]' />
                                             <div className='w-commerce-commercecartiteminfo mx-4 block flex-1'>
                                                 <h2 className='w-commerce-commercecartproductname text-lg'>{product}</h2>
-                                                <h3 className='text-stone-600'>{rate}</h3>
+                                                <h3 className='text-stone-600'>$ {rate} USD</h3>
                                                 <div className='mt-5'>
                                                     <button onClick={() => Remove_Cart(id)} className='underline hover:no-underline text-stone-600'>Remove</button>
                                                 </div>
@@ -77,7 +68,7 @@ function Cart() {
                                             <h4 className='font-medium'>${totalPrice.toFixed(2)}</h4>
                                         </div>
                                         <div className=''>
-                                            <a href="" className='bg-black text-white border border-black w-full block px-6 py-3 text-sm text-center transition-transform hover:bg-white hover:text-black '>Continue to Checkout</a>
+                                            <a href="..." className='bg-black text-white border border-black w-full block px-6 py-3 text-sm text-center transition-transform hover:bg-white hover:text-black '>Continue to Checkout</a>
                                         </div>
                                     </div>
                                 </div>

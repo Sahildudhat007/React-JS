@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 import './wishlist.css'
 
@@ -61,7 +60,7 @@ const Wishlist = () => {
                                                 return (
                                                     <tr key={ind}>
                                                         <td className="whitespace-nowrap">
-                                                            <a href="#" className='flex justify-center'>
+                                                            <a href="..." className='flex justify-center'>
                                                                 <img src={img} alt="" className='product-img w-[125px] h-[143px]' />
                                                             </a>
                                                         </td>
@@ -98,27 +97,6 @@ const Wishlist = () => {
                         </div>
                     </div>
                 </section>
-                {/* <tr className='cart-item'>
-                                    <td className=''>
-                                        <a href="#" className='flex justify-center'>
-                                            <img src={product5} alt="" className='' />
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" className='product-name'>Nathaniel Baldwin</a>
-                                    </td>
-                                    <td>$40</td>
-                                    <td className=''>
-                                        <input type="number" min={1} defaultValue={1} name='qty' className='qty' />
-                                    </td>
-                                    <td>$40.00</td>
-                                    <td>
-                                        <button className='tp-btn'>Add To Cart</button>
-                                    </td>
-                                    <td>
-                                        <button>Remove</button>
-                                    </td>
-                                </tr> */}
             </div>
         </div>
     )

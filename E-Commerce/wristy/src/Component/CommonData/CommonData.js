@@ -86,127 +86,127 @@ const dataBase = {
             id : 1,
             img : assets13,
             product : "Elite Enigma Digital",
-            rate : "$ 290.00 USD"
+            rate : 290.00
         },
         {
             id : 2,
             img : assets14,
             product : "Regency Royale Digital",
-            rate : "$ 374.00 USD"
+            rate : 374.00
         },
         {
             id : 3,
             img : assets15,
             product : "Noble Chronograph",
-            rate : "$ 320.00 USD"
+            rate : 320.00
         },
         {
             id : 4,
             img : assets16,
             product : "Supreme Sapphire",
-            rate : "$ 355.00 USD"
+            rate : 355.00
         },
         {
             id : 5,
             img : assets17,
             product : "Mastercraft Chrono",
-            rate : "$ 298.00 USD"
+            rate : 298.00
         },
         {
             id : 6,
             img : assets18,
             product : "Sovereign Signature",
-            rate : "$ 405.00 US"
+            rate : 405.00
         },
         {
             id : 7,
             img : assets19,
             product : "Timeless Elegance",
-            rate : "$ 220.00 USD"
+            rate : 220.00
         },
         {
             id : 8,
             img : assets20,
             product : "Zenith Zephyr",
-            rate : "$ 210.00 USD"
+            rate : 210.00
         },
         {
             id : 9,
             img : assets8,
             product : "Royal Crest Sovereign Signature",
-            rate : "$ 320.00 USD"
+            rate : 320.00
         },
         {
             id : 10,
             img : assets55,
             product : "Regal Majesty",
-            rate : "$ 470.00 USD"
+            rate : 470.00
         },
         {
             id : 11,
             img : assets56,
             product : "Regal Resplendence",
-            rate : "$ 260.00 USD"
+            rate : 260.00
         },
         {
             id : 12,
             img : assets57,
             product : "Grandiose Grandeur",
-            rate : "$ 300.00 USD"
+            rate : 300.00
         },
         {
             id : 13,
             img : assets58,
             product : "Timeless Tradition",
-            rate : "$ 330.00 USD"
+            rate : 330.00
         },
         {
             id : 14,
             img : assets59,
             product : "Prestige Classic",
-            rate : "$ 270.00 USD"
+            rate : 270.00
         },
         {
             id : 15,
             img : assets60,
             product : "Luxe Legacy Analog",
-            rate : "$ 410.00 USD"
+            rate : 410.00
         },
         {
             id : 16,
             img : assets61,
             product : "Majesty Magnum",
-            rate : "$ 255.00 USD"
+            rate : 255.00
         },
         {
             id : 17,
             img : assets62,
             product : "Regal Radiance",
-            rate : "$ 275.00 USD"
+            rate : 275.00
         },
         {
             id : 18,
             img : assets63,
             product : "Nova Nautica",
-            rate : "$ 350.00 USD"
+            rate : 350.00
         },
         {
             id : 19,
             img : assets64,
             product : "Prestige Proxima",
-            rate : "$ 295.00 USD"
+            rate : 295.00
         },
         {
             id : 20,
             img : assets9,
             product : "Timeless Tradition Classic Legacy",
-            rate : "$ 470.00 USD"
+            rate : 470.00
         },
         {
             id : 21,
             img : assets10,
             product : "Celestial Majesty Timekeeper Elite",
-            rate : "$ 395.00 USD"
+            rate : 395.00
         }
     ],
 
@@ -245,7 +245,7 @@ const dataBase = {
             id : 6,
             img : assets18,
             product : "Sovereign Signature",
-            rate : "$ 405.00 US"
+            rate : "$ 405.00 USD"
         },
         {
             id : 7,

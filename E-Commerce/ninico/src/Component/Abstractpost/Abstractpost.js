@@ -19,7 +19,7 @@ const Abstractpost = () => {
                     <div className='tpdealcontact'>
                         <div className='mb-7'>
                             <p className='ret text-red-600 font-semibold text-xl mb-1'>$49.00 <del className='text-gray-400'>$59.00</del> </p>
-                            <a href='#'>
+                            <a href='...'>
                                 <h1 className='text-4xl font-bold mb-4'>Pro2 Abstract Folded Post</h1>
                             </a>
                             <p className='text-lg text-gray-500'>Elegant pink origami design three-dimensional view and decoration co-exist. Great for adding a decorative touch to any room's decor. Wonderful accent piece for coffee tables or side tables.</p>

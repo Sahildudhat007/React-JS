@@ -4,7 +4,7 @@ import PageHeading from '../../../Component/PageHeading/PageHeading'
 
 import './shopDetails.css'
 
-import { ToastContainer, toast, Bounce } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { ADD_CART } from "../../../Redux/Actions/Action";
@@ -45,7 +45,7 @@ const ShopDetails = () => {
 
     // const { id, img, img2, title, rate } = productInfo[0]
 
-    const { id, img, title, rate, quantity } = productInfo[0]
+    const { img, title, rate } = productInfo[0]
 
     return (
         <div>
@@ -73,7 +73,7 @@ const ShopDetails = () => {
                                     <FaStar />
                                 </div>
                                 <div className='product-details-reviewers'>
-                                    <a href="#" className='text-gray-500'>10 Reviews</a>
+                                    <a href="..." className='text-gray-500'>10 Reviews</a>
                                 </div>
                             </div>
                             <div className='product-details-title-area flex items-center mb-1'>

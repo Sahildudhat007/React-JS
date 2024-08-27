@@ -4,7 +4,6 @@ import React from 'react'
 import asset73 from '../../Assets/asset 73.jpg'
 
 // react icon
-import { HiOutlineArrowRight } from "react-icons/hi2";
 import Accordion from '../../Component/Accordion/Accordion'
 
 // css link

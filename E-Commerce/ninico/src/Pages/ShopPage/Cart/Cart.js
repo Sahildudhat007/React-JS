@@ -1,12 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 
 import PageHeading from '../../../Component/PageHeading/PageHeading'
 
-import { REMOVE_CART, INCREMENT_CART, DECREMENT_CART, UPDATE_QUANTITY } from '../../../Redux/Actions/Action';
+import { REMOVE_CART, UPDATE_QUANTITY } from '../../../Redux/Actions/Action';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { IoMdArrowDropup } from "react-icons/io";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 const Cart = () => {
 
@@ -17,15 +14,15 @@ const Cart = () => {
         dispatch(REMOVE_CART(id))
     }
 
-    const Inc_Cart = (item) => {
-        console.log(item);
-        dispatch(INCREMENT_CART(item))
-    }
+    // const Inc_Cart = (item) => {
+    //     console.log(item);
+    //     dispatch(INCREMENT_CART(item))
+    // }
 
-    const Dec_Cart = (item) => {
-        console.log(item);
-        dispatch(DECREMENT_CART(item))
-    }
+    // const Dec_Cart = (item) => {
+    //     console.log(item);
+    //     dispatch(DECREMENT_CART(item))
+    // }
 
     const CartlistItem = useSelector((state) => state.cartreducer.carts);
     const quantities = useSelector((state) => state.cartreducer.quantities);
@@ -72,7 +69,7 @@ const Cart = () => {
                                                 return (
                                                     <tr key={ind}>
                                                         <td className="whitespace-nowrap">
-                                                            <a href="#" className='flex justify-center'>
+                                                            <a href="..." className='flex justify-center'>
                                                                 <img src={img} alt="" className='product-img w-[125px] h-[143px]' />
                                                             </a>
                                                         </td>

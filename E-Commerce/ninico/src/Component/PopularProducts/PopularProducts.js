@@ -21,16 +21,16 @@ const PopularProducts = () => {
                             <div className='btn1'>
                                 <ul className='flex flex-wrap'>
                                     <li>
-                                        <a href="#" className='active'>All</a>
+                                        <a href="..." className='active'>All</a>
                                     </li>
                                     <li>
-                                        <a href="#">Popular</a>
+                                        <a href="...">Popular</a>
                                     </li>
                                     <li>
-                                        <a href="#">On Sale</a>
+                                        <a href="...">On Sale</a>
                                     </li>
                                     <li>
-                                        <a href="#">Best Rated</a>
+                                        <a href="...">Best Rated</a>
                                     </li>
                                 </ul>
                             </div>

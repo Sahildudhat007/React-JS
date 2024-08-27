@@ -53,7 +53,7 @@ function SignUp() {
                                 <div className='agreement-checkbox'>
                                     <label htmlFor="" className='w-checkbox pl-1 flex items-start'>
                                         <input type="checkbox" className='w-checkbox-input mt-[7px] mr-2' />
-                                        <p className='w-form-label text-stone-700'>By creating an account, I agree to this website's  <a href="" className='underline'>privacy policy</a> and <a href="" className='underline'>terms of service</a></p>
+                                        <p className='w-form-label text-stone-700'>By creating an account, I agree to this website's  <a href="..." className='underline'>privacy policy</a> and <a href="..." className='underline'>terms of service</a></p>
                                     </label>
                                 </div>
                                 <div className='agreement-checkbox'>

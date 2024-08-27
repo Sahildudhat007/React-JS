@@ -20,7 +20,7 @@ function CommonShop({ id, img, product, rate, quantity }) {
                                 <Link to={`/productDetails/${id}`} className=''>{product}</Link>
                             </p>
                             <p className='mb-4'>
-                                <a href="#" className='text-sm'>{rate}</a>  
+                                <a href="#" className='text-sm'>$ {rate} USD</a>  
                             </p>
                         </div>
                     </div>

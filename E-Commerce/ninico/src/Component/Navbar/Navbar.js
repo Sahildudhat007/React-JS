@@ -3,13 +3,9 @@ import Categories from '../Categories/Categories'
 
 import { Link } from 'react-router-dom'
 
-import { useNavigate } from 'react-router-dom';
-
 import './navbar.css'
 
 const Navbar = () => {
-
-    const navigate = useNavigate();
 
   return (
     <div>

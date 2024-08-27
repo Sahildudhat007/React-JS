@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -39,7 +39,7 @@ const Blog = () => {
                                 </div>
                             </div>
                             <div className='tpabout-logo'>
-                                <a href="#">
+                                <a href="...">
                                     <img src={aboutimg3} alt="" />
                                 </a>
                             </div>
@@ -58,19 +58,19 @@ const Blog = () => {
                             <div className='tpabout-inner-list'>
                                 <ul>
                                     <li className='mb-5'>
-                                        <a href="#" className='flex'>
+                                        <a href="..." className='flex'>
                                             <IoMdCheckmark className='text-gray-500 text-2xl mr-2' />
                                             Orders go right to your restaurant point of sale, KDS, and kitchen
                                         </a>
                                     </li>
                                     <li className='mb-5'>
-                                        <a href="#" className='flex'>
+                                        <a href="..." className='flex'>
                                             <IoMdCheckmark className='text-gray-500 text-2xl mr-2' />
                                             Provide in-person pickup,  delivery by professional couriers
                                         </a>
                                     </li>
                                     <li className='mb-5'>
-                                        <a href="#" className='flex'>
+                                        <a href="..." className='flex'>
                                             <IoMdCheckmark className='text-gray-500 text-2xl mr-2' />
                                             Offer in-person diners self-serve, contactless ordering via QR codes.
                                         </a>

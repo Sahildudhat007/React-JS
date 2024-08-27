@@ -21,7 +21,7 @@ function Blogs() {
                             <h2 className='section-heading text-3xl'>News & Articles</h2>
                         </div>
                         <div className='blog-btn mt-8'>
-                            <a href="#" className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-1' /></a>
+                            <a href="..." className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-1' /></a>
                         </div>
                     </div>
                     <div className='w-dyn-list'>

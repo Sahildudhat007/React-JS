@@ -1,8 +1,6 @@
 import React from 'react'
 
-// react icon
-import { HiArrowLongRight } from "react-icons/hi2";
-
+// toastify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

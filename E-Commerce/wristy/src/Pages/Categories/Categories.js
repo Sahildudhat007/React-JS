@@ -33,7 +33,7 @@ function Categories() {
                 <div className='w-dyn-list'>
                     <div className='list grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative overflow-hidden'>
+                            <a href="..." className='box-img relative overflow-hidden'>
                                 <img src={asset74} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Smart Watches</h4>
@@ -42,7 +42,7 @@ function Categories() {
                             </a>
                         </div>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative'>
+                            <a href="..." className='box-img relative'>
                                 <img src={asset75} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Chronograph Watches</h4>
@@ -51,7 +51,7 @@ function Categories() {
                             </a>
                         </div>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative'>
+                            <a href="..." className='box-img relative'>
                                 <img src={asset76} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Men's Watch</h4>
@@ -60,7 +60,7 @@ function Categories() {
                             </a>
                         </div>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative'>
+                            <a href="..." className='box-img relative'>
                                 <img src={asset77} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Women's Watch</h4>
@@ -69,7 +69,7 @@ function Categories() {
                             </a>
                         </div>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative'>
+                            <a href="..." className='box-img relative'>
                                 <img src={asset78} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Leather Watches</h4>
@@ -78,7 +78,7 @@ function Categories() {
                             </a>
                         </div>
                         <div className='li-post listitem'>
-                            <a href="#" className='box-img relative'>
+                            <a href="..." className='box-img relative'>
                                 <img src={asset79} alt="" className='img-post' />
                                 <div className='categories-data absolute bottom-0 flex flex-col justify-center text-center text-white'>
                                     <h4 className='cat-text text-lg'>Skeleton Watches</h4>
@@ -100,32 +100,32 @@ function Categories() {
                     </div>
                     <div className='grid md:grid-cols-4 lg:grid-cols-6 gap-3'>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset80} alt="" className='img-post' />
                             </a>
                         </div>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset81} alt="" className='img-post' />
                             </a>
                         </div>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset82} alt="" className='img-post' />
                             </a>
                         </div>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset83} alt="" className='img-post' />
                             </a>
                         </div>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset84} alt="" className='img-post' />
                             </a>
                         </div>
                         <div className='li-post'>
-                            <a href="#" className='box-img'>
+                            <a href="..." className='box-img'>
                                 <img src={asset85} alt="" className='img-post' />
                             </a>
                         </div>

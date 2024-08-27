@@ -32,11 +32,11 @@ const Footer = () => {
                                     <h4 className='footer-widget-title mb-7 text-lg font-semibold'>Information</h4>
                                     <div className='footer-widget-links'>
                                         <ul>
-                                            <li><a href="#">Custom Service</a></li>
-                                            <li><a href="#">FAQs</a></li>
-                                            <li><a href="#">Ordering Tracking</a></li>
-                                            <li><a href="#">Contacts</a></li>
-                                            <li><a href="#">Events</a></li>
+                                            <li><a href="...">Custom Service</a></li>
+                                            <li><a href="...">FAQs</a></li>
+                                            <li><a href="...">Ordering Tracking</a></li>
+                                            <li><a href="...">Contacts</a></li>
+                                            <li><a href="...">Events</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -47,11 +47,11 @@ const Footer = () => {
                                     <h4 className='footer-widget-title mb-7 text-lg font-semibold'>My Account</h4>
                                     <div className='footer-widget-links'>
                                         <ul>
-                                            <li><a href="#">Delivery Information</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
-                                            <li><a href="#">Discount</a></li>
-                                            <li><a href="#">Custom Service</a></li>
-                                            <li><a href="#">Terms  Condition</a></li>
+                                            <li><a href="...">Delivery Information</a></li>
+                                            <li><a href="...">Privacy Policy</a></li>
+                                            <li><a href="...">Discount</a></li>
+                                            <li><a href="...">Custom Service</a></li>
+                                            <li><a href="...">Terms  Condition</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -63,31 +63,31 @@ const Footer = () => {
                                     <div className='footer-widget-links'>
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="...">
                                                     <i class="fa-brands fa-facebook-f"></i>
                                                     Facebook
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="...">
                                                     <i class="fa-brands fa-dribbble"></i>
                                                     Dribbble
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="...">
                                                     <i class="fa-brands fa-twitter"></i>
                                                     Twitter
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="...">
                                                     <i class="fa-brands fa-behance"></i>
                                                     Behance
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="...">
                                                     <i class="fa-brands fa-youtube"></i>
                                                     Youtube
                                                 </a>
@@ -120,7 +120,7 @@ const Footer = () => {
                                     <i class="fa-solid fa-phone-flip"></i>
                                 </div>
                                 <div className='footer-cta-text ml-3'>
-                                    <a href="#" className='text-xl font-bold'>980. 029. 666. 99</a>
+                                    <a href="..." className='text-xl font-bold'>980. 029. 666. 99</a>
                                     <p className='text-sm text-gray-500'>Working 8:00 - 22:00</p>
                                 </div>
                             </div>
@@ -130,8 +130,8 @@ const Footer = () => {
                                     <p className='text-sm text-gray-500'>15% discount on your first purchase</p>
                                 </div>
                                 <div className='footer-cta-source-thumb flex items-center'>
-                                    <a href="#"><img src={fgoogle} alt="fgoogle" /></a>
-                                    <a href="#" className='ml-1'><img src={fapp} alt="fapp" /></a>
+                                    <a href="..."><img src={fgoogle} alt="fgoogle" /></a>
+                                    <a href="..." className='ml-1'><img src={fapp} alt="fapp" /></a>
                                 </div>
                             </div>
                         </div>

@@ -21,11 +21,11 @@ const Contact = () => {
                             <ul className=''>
                                 <li className='flex items-start'>
                                     <IoLocationOutline className='text-2xl text-gray-500' />
-                                    <a href='#' className='ml-2 text-gray-500 hover:text-rose-600'>24/26 Strait Bargate, Boston, PE21, United Kingdom</a>
+                                    <a href='...' className='ml-2 text-gray-500 hover:text-rose-600'>24/26 Strait Bargate, Boston, PE21, United Kingdom</a>
                                 </li>
                                 <li className='flex items-start py-4'>
                                     <AiOutlinePhone className='mt-1 text-2xl text-gray-500' />
-                                    <a href='#' className='ml-2 text-gray-500 hover:text-rose-600'>+098 (905) 786 897 8 <br /> 6 - 146 - 389 - 5748</a>
+                                    <a href='...' className='ml-2 text-gray-500 hover:text-rose-600'>+098 (905) 786 897 8 <br /> 6 - 146 - 389 - 5748</a>
                                 </li>
                                 <li className='flex items-start'>
                                     <CiClock2 className='mt-1 text-xl text-gray-500' />

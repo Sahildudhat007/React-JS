@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// accordion 
+import { Accordion, AccordionItem } from '@szhsin/react-accordion';
+
 // assets link
 import asset5 from '../../Assets/asset 5.svg'
 import asset6 from '../../Assets/asset 6.jpeg'
@@ -31,7 +34,7 @@ import Signature from '../../Component/Signature/Signature'
 // css link
 import './home.css'
 
-import { useRef, useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -42,7 +45,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 
 function Home() {
@@ -58,19 +61,21 @@ function Home() {
                 <div className='w-container container mx-auto px-10'>
                     <div className='hero-wrap'>
                         <div className='hero-data'>
-                            <div>
+                            <div data-aos="fade-up" data-aos-duration="2000">
                                 <h1 className='hero-title text-5xl mb-5 font-semibold text-white'>Fashionable watches for every occasion</h1>
                                 <p className='hero-text text-white w-[100%] max-w-[80%]'>Elevate your style with our curated collection of essential watches for every wardrobe. From classic timepieces that exude sophistication to modern designs that make a statement.</p>
                                 <div className='hero-btn-wrap'>
                                     <button className='hero-btn text-white text-sm border border-white py-3 px-4 hover:bg-white hover:text-black'>View Collection</button>
                                 </div>
                             </div>
-                            <div className='hero-btm flex justify-between items-center'>
-                                <a href="#" className='hero-link'>
+                            <div className='hero-btm flex justify-between items-end'>
+                                <a href="..." className='hero-link'>
                                     Scroll to Explore
-                                    <img src={asset5} alt="" className='ml-2 down-arrow' />
+                                    <span className='down-arrow'>
+                                        <img src={asset5} alt="" className='ml-1 ' />
+                                    </span>
                                 </a>
-                                <div className='hero-img'>
+                                <div className='hero-img' data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                                     <img src={asset6} alt="" />
                                 </div>
                             </div>
@@ -109,7 +114,7 @@ function Home() {
                     <div className='w-dyn-list mx-auto grid grid-cols-2 md:grid-cols-3 gap-7'>
                         <div className='fp-list'>
                             <div className='product-item '>
-                                <a href="#" className='fp-block'>
+                                <a href="..." className='fp-block'>
                                     <img src={asset8} alt="" className='fp-image' />
                                 </a>
                                 <div className='fp-data text-center pb-5'>
@@ -120,7 +125,7 @@ function Home() {
                         </div>
                         <div className='fp-list'>
                             <div className='product-item'>
-                                <a href="#" className='fp-block'>
+                                <a href="..." className='fp-block'>
                                     <img src={asset9} alt="" className='fp-image' />
                                 </a>
                                 <div className='fp-data text-center pb-5'>
@@ -131,7 +136,7 @@ function Home() {
                         </div>
                         <div className='fp-list'>
                             <div className='product-item'>
-                                <a href="#" className='fp-block'>
+                                <a href="..." className='fp-block'>
                                     <img src={asset10} alt="" className='fp-image' />
                                 </a>
                                 <div className='fp-data text-center pb-5'>
@@ -146,16 +151,35 @@ function Home() {
             <section className='appraisal bg-black py-16 mb-20 overflow-hidden'>
                 <div className='a-container container mx-auto px-10'>
                     <div className='appraisal-wrap grid md:grid-cols-1 lg:grid-cols-2 gap-5'>
-                        <div className='appraisal-left'>
+                        <div className='appraisal-left flex flex-col justify-between'>
                             <div>
                                 <h2 className='appraisal-title text-3xl text-white mb-4'>Luxury Watch Appraisal</h2>
                                 <p className='appraisal-text text-stone-300'>Whether you're seeking a statement piece for a special occasion of an everyday watch that reflects your unique personality, our styling sessions offer tailored guidance and recommendations.</p>
                             </div>
                             <div className='appraisal-data'>
-                                
+                                <Accordion>
+                                    <AccordionItem header="01. Watch Repair & Maintenance" className='text-white py-5 border-b border-stone-600 transition-transform'>
+                                        <p className='mt-2 ml-6 text-stone-400'>
+                                            Our skilled technicians meticulously assess, repair & service your watches, restoring them to their optimal condition. From battery replacements to intricate mechanical adjustments.
+                                        </p>
+
+                                    </AccordionItem>
+
+                                    <AccordionItem header="02. Watch Consultation Services" className='text-white py-5 border-b border-stone-600 transition-transform'>
+                                        <p className='mt-2 ml-6 text-stone-400'>
+                                            Our knowledgeable advisors provide personalized guidance tailored to your preferences and lifestyle, helping you navigate the vast world of watches with confidence.
+                                        </p>
+                                    </AccordionItem>
+
+                                    <AccordionItem header="03. Custom Watch Design Services" className='text-white py-5 border-b border-stone-600 transition-transform'>
+                                        <p className='mt-2 ml-6 text-stone-400'>
+                                            Make your watch dreams a reality with our Custom Watch Design Services. Collaborate with our skilled artisans to create a bespoke timepiece that reflects your unique style and vision.
+                                        </p>
+                                    </AccordionItem>
+                                </Accordion>
                             </div>
                         </div>
-                        <div className='appraisal-img' data-aos="zoom-in">
+                        <div className='appraisal-img' data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="5000">
                             <img src={asset11} alt="" />
                         </div>
                     </div>
@@ -175,9 +199,8 @@ function Home() {
                     <div className='w-dyn-list'>
                         <div className='post-list grid md:grid-cols-3 lg:grid-cols-4 gap-6'>
                             {CommonData.productData1.map((cvalue, index, array) => {
-                                // const { id, img, product, rate } = shop
                                 return (
-                                    <CommonProduct key={index} img={cvalue.img} product={cvalue.product} rate={cvalue.rate} />
+                                    <CommonProduct key={index} img={cvalue.img} product={cvalue.product} rate={cvalue.rate} id={cvalue.id} />
                                 )
                             })}
                         </div>
@@ -295,11 +318,11 @@ function Home() {
                             <h2 className='section-heading text-3xl'>News & Articles</h2>
                         </div>
                         <div className='blog-btn'>
-                            <a href="#" className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-2' /></a>
+                            <a href="..." className='flex items-center text-xs'>View All <HiArrowLongRight className='text-lg ml-2' /></a>
                         </div>
                     </div>
                     <div className='w-dyn-list grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                        <a href="#" className='post-block'>
+                        <a href="..." className='post-block'>
                             <div className='post-img'>
                                 <img src={asset30} alt="" className='post-image' />
                             </div>
@@ -311,7 +334,7 @@ function Home() {
                                 </div>
                             </div>
                         </a>
-                        <a href="#" className='post-block'>
+                        <a href="..." className='post-block'>
                             <div className='post-img'>
                                 <img src={asset31} alt="" className='post-image' />
                             </div>
@@ -323,7 +346,7 @@ function Home() {
                                 </div>
                             </div>
                         </a>
-                        <a href="#" className='post-block'>
+                        <a href="..." className='post-block'>
                             <div className='post-img'>
                                 <img src={asset32} alt="" className='post-image' />
                             </div>

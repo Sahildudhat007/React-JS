@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { useNavigate } from 'react-router-dom';
 import PageHeading from '../../../Component/PageHeading/PageHeading';
 
 import loginbg from '../../../Assets/loginbg.jpg'
@@ -14,10 +13,8 @@ import { FaRegUser } from "react-icons/fa6";
 import { GoKey } from "react-icons/go";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { GiHandBag, GiSwallow } from "react-icons/gi";
+import { GiHandBag } from "react-icons/gi";
 // import { IoRemoveOutline } from "react-icons/io5";
-
-import Swal from 'sweetalert2'
 
 import './signin.css'
 
@@ -30,8 +27,6 @@ const SignupSchema = Yup.object({
 })
 
 const SignIn = () => {
-
-    const navigate = useNavigate();
 
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
@@ -71,7 +66,7 @@ const SignIn = () => {
     //       });
     // }
 
-    const { values, handleChange, handleSubmit, handleBlur, errors, touched } = useFormik({
+    const { values, handleChange, handleSubmit, handleBlur, touched } = useFormik({
         initialValues: {
             Email: "",
             Password: ""
@@ -92,9 +87,9 @@ const SignIn = () => {
         }
     }
 
-    function handleBlur_2 () {
-        handleBlur()
-    }
+    // function handleBlur_2 () {
+    //     handleBlur()
+    // }
 
     return (
         <div>
@@ -133,7 +128,7 @@ const SignIn = () => {
                                     </div>
                                     <div className='tpsign-remember mb-5'>
                                         <div className='tpsign-pass'>
-                                            <a href="#" className='underline tpsign-pass2'>Already Have Account?</a>
+                                            <a href="..." className='underline tpsign-pass2'>Already Have Account?</a>
                                         </div>
                                     </div>
                                     <div className='tptrack-btn tptrack-btn2'>
@@ -177,7 +172,7 @@ const SignIn = () => {
                                             <label className="form-check-label ml-2 text-gray-500">Remember me</label>
                                         </div>
                                         <div className='tpsign-pass'>
-                                            <a href="#" className='underline'>Forget Password</a>
+                                            <a href="..." className='underline'>Forget Password</a>
                                         </div>
                                     </div>
                                     <div className='tptrack-btn'>

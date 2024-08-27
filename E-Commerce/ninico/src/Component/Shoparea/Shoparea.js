@@ -17,7 +17,7 @@ import instagram04 from '../../Assets/instagram04.jpg'
 import instagram05 from '../../Assets/instagram05.jpg'
 import instagram06 from '../../Assets/instagram06.jpg'
 
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 const Shoparea = () => {
     return (

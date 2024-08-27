@@ -17,7 +17,7 @@ import bannerslider01 from '../../Assets/bannerslider01.jpg'
 import bannerslider02 from '../../Assets/bannerslider02.jpg'
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const Home = () => {
   return (
