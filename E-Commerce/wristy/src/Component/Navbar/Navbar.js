@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { REMOVE_CART, UPDATE_QUANTITY } from '../../Redux/Actions/Action';
 
@@ -23,7 +23,6 @@ function NavBar() {
     const [openSearchBox, setOpenSearchBox] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
-
     // redux concept
     const data = useSelector((state) => state.cartreducer.carts)
     // console.log(data, "data")
@@ -44,14 +43,13 @@ function NavBar() {
         dispatch(UPDATE_QUANTITY(id, Quantity));
     };
 
-    // let Subtotal = null ;
-    // CartlistItem.forEach((item) => {
-    //     const Quantity = quantities[item.id] || 1;
-    //     Subtotal += item.rate * Quantity;
-    // })
-
-    // const Tax = 9.00;
-    let totalPrice = 0;
+    // subtotal
+    const subtotal = useMemo(() => {
+        return CartlistItem.reduce((total, item) => {
+            const quantity = quantities[item.id] || 1;
+            return total + item.rate * quantity;
+        }, 0);
+    }, [CartlistItem, quantities]);
 
     return (
         <div className='border-b border-gray-500 relative min-h-16'>
@@ -128,8 +126,8 @@ function NavBar() {
                                             <div className='w-commerce-commercecartformwrapper'>
                                                 {CartlistItem.map((item, ind) => {
                                                     let { id, img, product, rate } = item
-                                                    const quantity = quantities[id] || 1;
-                                                    totalPrice += quantity * rate
+                                                    // const quantity = quantities[id] || 1;
+                                                    // totalPrice += quantity * rate
                                                     return (
                                                         <div key={ind} className='w-commerce-commercecartform'>
                                                             <div className='w-commerce-commercecartlist py-4 px-6'>
@@ -161,7 +159,7 @@ function NavBar() {
                                                 <div className='w-commerce-commercecartfooter border-t px-4 py-3'>
                                                     <div className='w-commerce-commercecartlineitem flex justify-between mb-4'>
                                                         <h4>Subtotal</h4>
-                                                        <h4 className='font-medium'>${totalPrice.toFixed(2)}</h4>
+                                                        <h4 className='font-medium'>${subtotal.toFixed(2)}</h4>
                                                     </div>
                                                     <div className=''>
                                                         <a href=".." className='bg-black text-white border border-black w-full block px-6 py-3 text-sm text-center transition-transform hover:bg-white hover:text-black '>Continue to Checkout</a>
