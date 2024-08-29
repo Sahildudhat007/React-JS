@@ -152,16 +152,6 @@
     object-fit: cover;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width:992px) {
     .hero-wrapper {
         position: static;
@@ -184,7 +174,14 @@
     }
 
     .hero-right {
+        max-width: 100%;
         position: static;
+    }
+
+    .hero-right img {
+        width: 100%;
+        max-width: 30%;
+        margin-bottom: 30px;
     }
 
     .hero-watch {
@@ -217,6 +214,16 @@
 
     .hero-right {
         max-width: 100%;
+        padding-block: 50px;
+    }
+
+    .hero-right img {
+        width: 100%;
+        max-width: 30%;
+    }
+
+    .hero-watch {
+        margin-bottom: 30px;
     }
 
     .nav-menu-wrap {
@@ -270,10 +277,14 @@
     }
 
     .hero-right {
-        grid-row-gap: 40px;
+        grid-row-gap: 30px;
         padding-top: 0;
         padding-bottom: 30px;
         margin-top: 30px;
+    }
+
+    .hero-right img {
+        margin-bottom: 10px;
     }
 
     .hero-text {

@@ -58,7 +58,7 @@ function Home() {
     return (
         <div>
             <div className='hero-wrapper bg-black mb-28'>
-                <div className='w-container container mx-auto px-10'>
+                <div className='w-container container mx-auto px-10 w-[100%] max-w-[100%] max-lg:mt-5 max-lg:mx-0'>
                     <div className='hero-wrap'>
                         <div className='hero-data'>
                             <div data-aos="fade-up" data-aos-duration="2000">

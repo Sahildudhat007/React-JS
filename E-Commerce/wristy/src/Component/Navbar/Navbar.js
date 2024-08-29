@@ -54,7 +54,7 @@ function NavBar() {
     return (
         <div className='border-b border-gray-500 relative min-h-16'>
 
-            <nav className='nav w-[100%] mx-auto px-10 inset-0 flex items-center justify-between absolute z-20 bg-black'>
+            <nav className='nav w-[100%] mx-auto px-10 max-sm:px-5 inset-0 flex items-center justify-between absolute z-20 bg-black'>
 
                 <Link to={'/'} className='logoBox'>
                     <img src={asset0} alt="logoImage" />
@@ -72,7 +72,7 @@ function NavBar() {
                     </ul>
                 </div>
 
-                <div className="navBtn_Box flex items-center gap-4">
+                <div className="navBtn_Box flex items-center gap-4 max-sm:gap-2">
                     <div className='search_box text-white relative hidden lg:flex '>
                         {openSearchBox &&
                             <ul className={`${openSearchBox ? " searchAnimation " : ""} search bg-white text-black flex items-center justify-center rounded-3xl h-10 gap-x-2 px-2 absolute top-[50%] -translate-y-2/4 -right-1 bottom-0 mx-auto `}>
