@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { REMOVE_CART, UPDATE_QUANTITY } from '../../Redux/Actions/Action';
 
 // PopUp
@@ -10,6 +10,7 @@ import 'reactjs-popup/dist/index.css';
 // * image import
 import asset0 from '../../Assets/asset 0.svg'
 import asset48 from '../../Assets/asset 48.svg'
+import asset102 from '../../Assets/asset102.svg'
 
 // ? ICONS
 import { Menu, Search, ShoppingBag, User, X } from 'lucide-react';
@@ -22,6 +23,8 @@ function NavBar() {
 
     const [openSearchBox, setOpenSearchBox] = useState(false);
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
+    // const [searchTerm, setSearchTerm] = useState('');  // New state for search term
+    // const [searchResults, setSearchResults] = useState([]);  // New state for search results
 
     // redux concept
     const data = useSelector((state) => state.cartreducer.carts)
@@ -51,20 +54,36 @@ function NavBar() {
         }, 0);
     }, [CartlistItem, quantities]);
 
-    return (
-        <div className='border-b border-gray-500 relative min-h-16'>
+    const location = useLocation();
+    const isWhiteTheme = location.pathname !== '/';
 
-            <nav className='nav w-[100%] mx-auto px-10 max-sm:px-5 inset-0 flex items-center justify-between absolute z-20 bg-black'>
+    // Function to handle search input change
+    // const handleSearchChange = (event) => {
+    //     const searchQuery = event.target.value;
+    //     setSearchTerm(searchQuery);
+
+    //     // Example search logic (you can customize it to search your data)
+    //     const filteredResults = navLinks.filter((link) =>
+    //         link.toLowerCase().includes(searchQuery.toLowerCase())
+    //     );
+
+    //     setSearchResults(filteredResults);
+    // };
+
+    return (
+        <div className={`border-b border-stone-300 relative min-h-16 ${isWhiteTheme ? 'bg-white' : 'bg-black'}`}>
+
+            <nav className={`nav w-[100%] mx-auto px-10 max-sm:px-5 inset-0 flex items-center justify-between absolute z-20`}>
 
                 <Link to={'/'} className='logoBox'>
-                    <img src={asset0} alt="logoImage" />
+                    <img src={isWhiteTheme ? asset102 : asset0} alt="logoImage" />
                 </Link>
 
                 <div className='nevLinkWrp hidden lg:block'>
                     <ul className='nevLink flex items-center gap-x-6'>
                         {navLinks.map((val) => {
                             return (
-                                <li key={val} className='text-white capitalize text-sm font-normal'>
+                                <li key={val} className={`${isWhiteTheme ? 'text-black' : 'text-white'} capitalize text-sm font-normal`}>
                                     <Link to={`/${val}`}>{val}</Link>
                                 </li>
                             )
@@ -75,9 +94,9 @@ function NavBar() {
                 <div className="navBtn_Box flex items-center gap-4 max-sm:gap-2">
                     <div className='search_box text-white relative hidden lg:flex '>
                         {openSearchBox &&
-                            <ul className={`${openSearchBox ? " searchAnimation " : ""} search bg-white text-black flex items-center justify-center rounded-3xl h-10 gap-x-2 px-2 absolute top-[50%] -translate-y-2/4 -right-1 bottom-0 mx-auto `}>
+                            <ul className={`${openSearchBox ? " searchAnimation " : ""} border border-stone-300 search bg-white text-black flex items-center justify-center rounded-3xl h-10 gap-x-2 px-2 absolute top-[50%] -translate-y-2/4 -right-1 bottom-0 mx-auto `}>
                                 <li className=""> <label htmlFor="search" className='text-xs'> <Search strokeWidth={1} /> </label>  </li>
-                                <li> <input type="text" name="" className="text-base border-none outline-none" id="search" placeholder='search...' /> </li>
+                                <li> <input type="text" name="" className="h-10 border-y border-x-0 border-stone-300 text-base focus:ring-0 focus:border-none" id="search" placeholder='search...'  /> </li>
                                 <li>
                                     <button onClick={() => setOpenSearchBox(!openSearchBox)} className='flex items-center justify-center'>
                                         <X strokeWidth={1} />
@@ -85,13 +104,13 @@ function NavBar() {
                                 </li>
                             </ul>}
                         <button onClick={() => setOpenSearchBox(!openSearchBox)} className='flex items-center justify-center'>
-                            <Search strokeWidth={1} />
+                            <Search strokeWidth={1} className={`${isWhiteTheme ? 'text-black' : 'text-white'}`} />
                         </button>
                     </div>
 
                     <div className='log_in_box'>
                         <Link to={'login'} className='text-white flex items-center justify-center'>
-                            <User strokeWidth={1} />
+                            <User strokeWidth={1} className={`${isWhiteTheme ? 'text-black' : 'text-white'}`} />
                         </Link>
                     </div>
 
@@ -105,8 +124,8 @@ function NavBar() {
 
                         <Popup
                             trigger={<button className="button text-white flex items-center gap-1">
-                                <ShoppingBag strokeWidth={1} />
-                                <p className='capitalize text-sm font-normal'>
+                                <ShoppingBag strokeWidth={1} className={`${isWhiteTheme ? 'text-black' : 'text-white'}`} />
+                                <p className={`${isWhiteTheme ? 'text-black' : 'text-white'} capitalize text-sm font-normal`}>
                                     Cart ({data.length})
                                 </p>
                             </button>}

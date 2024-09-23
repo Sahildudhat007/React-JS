@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { ArrowRight } from 'lucide-react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Edit = () => {
 

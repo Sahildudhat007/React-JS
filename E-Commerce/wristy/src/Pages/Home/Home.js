@@ -158,7 +158,7 @@ function Home() {
                             </div>
                             <div className='appraisal-data'>
                                 <Accordion>
-                                    <AccordionItem header="01. Watch Repair & Maintenance" className='text-white py-5 border-b border-stone-600 transition-transform'>
+                                    <AccordionItem header="01. Watch Repair & Maintenance" className='text-white py-5 border-b border-stone-600 transition duration-700 ease-in-out'>
                                         <p className='mt-2 ml-6 text-stone-400'>
                                             Our skilled technicians meticulously assess, repair & service your watches, restoring them to their optimal condition. From battery replacements to intricate mechanical adjustments.
                                         </p>
