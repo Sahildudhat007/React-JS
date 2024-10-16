@@ -1,0 +1,46 @@
+.accordion {
+    width: 100%;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.wrapper .question-container {
+    width: 100%;
+    text-align: left;
+    padding: 16px 10px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper .arrow {
+    transition: .5s ease-in-out;
+}
+
+.arrow.active {
+    rotate: 90deg;
+}
+
+.wrapper .answer-container {
+    transition: height .7s ease-in-out;
+}
+
+@media (max-width:576px) {
+    .wrapper .question-container {
+        padding-inline: 0;
+
+    }
+
+    .question-content {
+        font-size: 16px;
+    }
+
+    .answer-container {
+        margin-left: 0px;
+        font-size: 16px;
+    }
+}
