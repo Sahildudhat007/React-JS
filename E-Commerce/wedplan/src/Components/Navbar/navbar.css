@@ -9,3 +9,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Add shadow for better visibility */
 }
+
+.active-link,
+.nav__link:hover {
+    color: #27baa0;
+}

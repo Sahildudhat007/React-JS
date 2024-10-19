@@ -8,7 +8,7 @@ import asset8 from '../../assets/asset 8.png'
 function Testimonials() {
     return (
         <React.Fragment>
-            <section id='testimonials' className='container mx-auto px-10 pt-20 pb-24 bg-gray-100 relative'>
+            <section id='testimonials' className='container mx-auto px-5 md:px-10 pt-20 pb-24 bg-gray-100 relative'>
                 <div className='absolute -top-20 left-0'>
                     <img src={asset8} alt="" />
                 </div>

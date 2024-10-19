@@ -5,9 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage:{
-        'back_img':'url("./assets/background-min.jpg")',
-        'wedding_planner' : 'url("./assets/wedding-planner.jpg")'
+      backgroundImage: {
+        'back_img': 'url("./assets/background-min.jpg")',
+        'wedding_planner': 'url("./assets/wedding-planner.jpg")'
       }
     },
   },

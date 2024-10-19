@@ -10,14 +10,14 @@ import Accordions from '../Accordion/Accordions'
 function WhyUs() {
     return (
         <React.Fragment>
-            <section id='whyUs' className='container mx-auto md:px-5 lg:px-10 py-20 relative'>
+            <section id='whyUs' className='container mx-auto px-5 md:px-10 lg:px-10 py-20 relative'>
                 <div className='absolute top-0 right-0'>
                     <img src={asset37} alt="" />
                 </div>
                 <div className='text-center'>
-                    <h2 className='text-5xl leading-[70px]'>Why Choose Us?</h2>
+                    <h2 className='text-4xl md:text-5xl leading-[70px]'>Why Choose Us?</h2>
                 </div>
-                <div className='mt-2 mb-14 text-center'>
+                <div className='mb-8 md:mt-2 md:mb-14 text-center'>
                     <p className='text-xl'>Here are top 4 reasons to choose us to plan your wedding</p>
                 </div>
                 <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-10 items-center'>

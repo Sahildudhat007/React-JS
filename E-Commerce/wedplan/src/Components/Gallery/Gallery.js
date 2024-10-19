@@ -12,7 +12,7 @@ import asset15 from '../../assets/asset 15.jpeg'
 function Gallery() {
     return (
         <React.Fragment>
-            <section id='gallery' className='container mx-auto md:px-5 lg:px-10 pt-20 pb-24'>
+            <section id='gallery' className='container mx-auto px-5 md:px-10 lg:px-10 pt-20 pb-24'>
                 <div className='text-center'>
                     <h2 className='text-4xl'>Wedding Gallery</h2>
                     <p className='mt-3 mb-11 text-xl text-gray-500'>Our favorite real wedding photos of 2020</p>

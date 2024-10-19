@@ -9,7 +9,7 @@ import './faq.css'
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
     const contentHeight = useRef()
     return (
-        <div className="wrapper border border-gray-200 py-2" >
+        <div className="wrapper border border-gray-200 p-3 py-1 md:py-2" >
             <button className={`question-container hover:text-teal-600 ${isOpen ? 'active' : ''}`} onClick={onClick} >
                 {/* <HiOutlineArrowSmallRight className={`arrow ${isOpen ? 'active' : ''} text-xl mr-3`} /> */}
                 <p className='question-content text-xl'>{question}</p>
@@ -20,7 +20,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
                     ? { height: contentHeight.current.scrollHeight }
                     : { height: "0px" }
             }>
-                <p className="answer-content py-2 text-md text-stone-700">{answer}</p>
+                <p className="answer-content py-3 text-md text-stone-700">{answer}</p>
             </div>
         </div>
     )

@@ -15,20 +15,20 @@ import CommonData from './CommonData'
 function Packages() {
     return (
         <React.Fragment>
-            <section id='packages' className='packages container mx-auto lg:px-10 md:px-5 py-20 relative'>
+            <section id='packages' className='packages container mx-auto px-5 md:px-10 lg:px-10 py-20 relative'>
                 <div className='absolute -top-20 left-0'>
                     <img src={asset8} alt="" className='' />
                 </div>
                 <div className='text-center'>
                     <div className=''>
-                        <h3 className='text-5xl leading-[60px]'>Wedding Packages</h3>
+                        <h3 className='text-4xl md:text-5xl leading-[60px]'>Wedding Packages</h3>
                         <p className='mt-3 mb-8 text-xl'>Select your wedding package that suits your pocket</p>
                     </div>
                     <div>
-                        <div className='space-x-4'>
+                        <div className='space-x-4 space-y-4'>
                             <button className='bg-teal-500 text-white px-4 py-2'>Upto to 100 guest</button>
-                            <button className='px-4 py-2 border border-black'>Upto to 200 guest</button>
-                            <button className='px-4 py-2 border border-black'>Upto to 500 guest</button>
+                            <button className='px-4 py-2 border border-gray-400'>Upto to 200 guest</button>
+                            <button className='px-4 py-2 border border-gray-400'>Upto to 500 guest</button>
                         </div>
                     </div>
                 </div>
@@ -59,15 +59,14 @@ function Packages() {
                     </div>
                 </div>
             </section>
-            <section className='bg-back_img h-96 bg-cover relative'>
+            <section className='bg-back_img px-5 h-96 bg-center bg-cover relative'>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 className="text-[46px]">Looking for a custom Package?</h1>
-                    <p className="text-xl mt-3 mb-10">
+                    <h1 className="text-[40px] md:text-[46px] leading-[50px]">Looking for a custom Package?</h1>
+                    <p className="text-lg md:text-xl mt-3 mb-10">
                         We offer customized packages as per your budget and requirement
                     </p>
-
-                    <div className="flex space-x-4">
+                    <div className="flex flex-wrap justify-center space-y-4 md:space-y-0 md:space-x-4">
                         <a
                             href="tel:1800-123"
                             className='flex items-center px-12 py-3 bg-teal-500 text-white text-[17px]'>

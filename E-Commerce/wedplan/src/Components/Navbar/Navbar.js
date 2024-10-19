@@ -7,7 +7,6 @@ import './navbar.css'
 
 // icons
 import { HiOutlineBars3 } from "react-icons/hi2";
-
 import { HiX, HiOutlineMenu } from "react-icons/hi";
 
 // assets 
@@ -39,7 +38,7 @@ function Navbar() {
         <React.Fragment>
             <header
                 id='navbar'
-                className={`header items-center container mx-auto px-10 border-b border-gray-400 w-full fixed z-20 ${scrollHeader ? 'scroll-header' : ''}`}
+                className={`header items-center container mx-auto px-5 md:px-10 lg:px-10 border-b border-gray-400 w-full fixed z-20 ${scrollHeader ? 'scroll-header' : ''}`}
             >
                 <nav className="flex items-center justify-between py-5">
                     <a href="..." className="">
@@ -50,64 +49,70 @@ function Navbar() {
                             <li className="">
                                 <a href="#home"
                                     onClick={() => setActiveNav("#home")}
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-teal-500'}`}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-teal-500'} ${activeNav === "#home" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     HOME
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#about"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#about")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}  ${activeNav === "#about" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     ABOUT
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#packages"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#packages")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'} ${activeNav === "#packages" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     PACKAGES
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#gallery"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#gallery")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'} ${activeNav === "#gallery" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     GALLERY
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#team"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#team")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'} ${activeNav === "#team" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     TEAM
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#testimonials"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#testimonials")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'} ${activeNav === "#testimonials" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     TESTIMONIALS
                                 </a>
                             </li>
                             <li className="">
                                 <a href="#faq"
-                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'}`}
+                                    onClick={() => setActiveNav("#faq")}
+                                    className={`text-sm font-semibold ${scrollHeader ? 'text-black' : 'text-white hover:text-teal-500'} ${activeNav === "#faq" ? "nav__link active-link" : "nav__link"}`}
                                 >
                                     FAQS
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div className="">
-                        <button className={`py-2 px-5 bg-teal-500 text-white`}>
+                    <div className="flex items-center">
+                        <a href='#contact' className={`py-2 px-5 bg-teal-500 text-white max-sm:hidden md:hidden lg:block`}>
                             Contact us
-                        </button>
+                        </a>
+                        <div className=' md:block lg:hidden'>
+                            <HiOutlineBars3 className={`text-3xl ${scrollHeader ? 'text-black' : 'text-white'} `} />
+                        </div>
                     </div>
                 </nav>
-                {/* <div className='xl:hidden'>
-                    <HiOutlineBars3 className='text-3xl text-white' />
-                </div> */}
             </header>
             <div>
                 <Home />

@@ -10,7 +10,7 @@ function Instagram() {
     return (
         <React.Fragment>
             <section id='instagram' className='container mx-auto'>
-                <div className='grid md:grid-cols-2 lg:grid-cols-4'>
+                <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4'>
                     <a href="https://assets.website-files.com/6224c960dd39af2bb5b5f59b/6283546e60e7fb7cc273749e_gallery-2-min.jpg"
                         target='_blank'
                         rel='noreferrer'

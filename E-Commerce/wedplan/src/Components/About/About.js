@@ -7,12 +7,15 @@ import asset38 from '../../assets/asset 38.png'
 function About() {
     return (
         <React.Fragment>
-            <section id='about' className='container mx-auto px-10 pt-[55px] pb-[120px] md:px-5'>
-                <div className='grid md:grid-cols-1 lg:grid-cols-2 items-center'>
+            <section id='about' className='container mx-auto px-5 md:px-10 pt-[55px] md:pb-[55px] lg:pb-[100px] relative'>
+                <div className='absolute -top-3 right-2 md:top-0 md:right-0 lg:top-10 lg:right-0'>
+                    <img src={asset37} alt="" className='' />
+                </div>
+                <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-0 md:py-8 items-center'>
                     <div className='relative'>
-                        <img src={asset38} alt="" className='' />
-                        <div className='flex flex-col justify-center items-center text-center w-[170px] h-[156px] border-b-2 border-teal-500 shadow-lg absolute -bottom-5 -right-5 bg-white'>
-                            <div className='text-6xl mb-2'>
+                        <img src={asset38} alt="" className='max-sm:h-[320px] md:h-[300] lg:h-full' />
+                        <div className='flex flex-col justify-center items-center text-center w-[150px] h-[120px] md:w-[170px] md:h-[156px] border-b-2 border-teal-500 shadow-lg absolute -bottom-11 right-9 md:-bottom-5 md:-right-5 bg-white'>
+                            <div className='text-5xl md:text-6xl mb-2'>
                                 <h1 className='text-gray-600'>20<span className='text-3xl'>+</span></h1>
                             </div>
                             <div>
@@ -20,12 +23,9 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    <div className='w-[100%] lg:ml-[85px] md:py-10 md:ml-0 md:px-5 relative'>
-                        <div className='absolute top-0 right-0'>
-                            <img src={asset37} alt="" className='' />
-                        </div>
+                    <div className='w-[100%] lg:ml-[20px] py-10 md:py-10 md:ml-0 md:px-5 relative'>
                         <div>
-                            <h2 className='text-[45px] leading-[1.2em]'>
+                            <h2 className='text-[35px] md:text-[45px] leading-[1.2em]'>
                                 We are committed to make your wedding
                                 <span className='ml-3 text-teal-500 border-b-4 border-teal-100'>memorable</span>
                             </h2>
