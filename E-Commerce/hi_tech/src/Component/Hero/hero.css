@@ -1,0 +1,7 @@
+.hero-img {
+    background-image: linear-gradient(rgba(204, 227, 232, 0), #cce3e8);
+}
+
+.hero-main-img {
+    background-image: linear-gradient(#edd5cb, rgba(237, 213, 203, 0));
+}
