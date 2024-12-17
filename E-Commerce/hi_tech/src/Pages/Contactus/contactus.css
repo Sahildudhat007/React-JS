@@ -1,0 +1,19 @@
+.fullName {
+    background-image: url('../../assets/asset 100.svg');
+    background-repeat: no-repeat;
+}
+
+.email {
+    background-image: url('../../assets/asset 101.svg');
+    background-repeat: no-repeat;
+}
+
+.phone {
+    background-image: url('../../assets/asset 102.svg');
+    background-repeat: no-repeat;
+}
+
+.message {
+    background-image: url('../../assets/asset 103.svg');
+    background-repeat: no-repeat;
+}

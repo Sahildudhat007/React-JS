@@ -1,5 +1,6 @@
 
 // assets
+import { Link } from 'react-router-dom'
 import asset3 from '../../assets/asset 3.svg'
 import asset4 from '../../assets/asset 4.jpeg'
 import asset5 from '../../assets/asset 5.jpeg'
@@ -13,17 +14,17 @@ import './hero.css'
 function Hero() {
     return (
         <>
-            <section className="container mx-auto px-5 md:px-10 py-10 md:py-20 mb-10 flex flex-wrap">
+            <section className="container mx-auto px-5 md:px-10 py-10 mb-10 flex flex-wrap">
                 <div className="w-full md:w-[100%] lg:max-w-[38%] flex flex-col justify-between mb-10 lg:mb-0">
                     <div className='space-y-6 md:space-y-8'>
                         <div>
                             <h1 className='text-[40px] md:text-[65px] font-semibold leading-[45px] md:leading-[75px] mb-4 md:mb-7'>Find Your Perfect Tech Companion Here</h1>
                             <p className='text-sm'>Founded with a vision to redefine the way you shop for electronics, HiTech is your one-stop destination for all things tech</p>
                         </div>
-                        <button className='bg-orange-600 text-white text-sm rounded-full flex items-center px-6 py-3'>
-                            Shop Now
+                        <Link to={'/Shop'} className='bg-orange-600 text-white w-[35%] text-sm rounded-full flex items-center text-center px-6 py-3 '>
+                            <span className=''>Shop Now</span>
                             <img src={asset3} alt="" className='text-white mt-1 ml-2' />
-                        </button>
+                        </Link>
                     </div>
                     <div className='w-full max-w-[100%] md:max-w-[75%] flex items-center mt-8'>
                         <div className='flex items-center pr-4'>
@@ -49,6 +50,7 @@ function Hero() {
                     <div className='w-full md:w-[52%] lg:w-[62%]'>
                         <div className='hero-main-img flex justify-center items-center rounded-md min-h-[400px] md:min-h-[500px] max-h-[500px] relative overflow-hidden'>
                             <img src={asset8} alt="" className='min-h-[300px] md:min-h-[445px] max-h-[445px] object-cover' />
+                            <p className='bg-white absolute top-32 right-16 w-[70px] h-[70px] flex text-center justify-center items-center rounded-full text-sm text-zinc-700'>15%<br />OFF</p>
                         </div>
                     </div>
                 </div>

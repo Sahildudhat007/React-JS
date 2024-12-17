@@ -57,7 +57,7 @@ const Blog = () => {
                             </div>
                             <div className='tpabout-inner-list'>
                                 <ul>
-                                    <li className='mb-5'>
+                                    <li className='mb-4'>
                                         <a href="..." className='flex'>
                                             <IoMdCheckmark className='text-gray-500 text-2xl mr-2' />
                                             Orders go right to your restaurant point of sale, KDS, and kitchen
